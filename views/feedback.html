@@ -1,0 +1,21 @@
+<html>
+    <link rel="icon" type="image/png" href="/static/image/icon.jpg" sizes="32x32" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="/static/stylesheet/feedback.css">
+    <script src="/static/javascript/angular.js"></script>
+</html>
+<body >
+    <h2>feedbacks</h2>
+    <div class="data" ng-app="myfeed" ng-controller="myfeed_ctr">
+    <div class='box' ng-repeat="x in data" >
+        <h2>{{x.s_no}}</h2>  
+         <p>{{x.feed}}</p> 
+      <div class="down-line">
+        <p class="design-circle"></p> </div>
+      </div></div>
+      
+
+</body>

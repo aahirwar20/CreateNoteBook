@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="/static/image/icon.jpg" sizes="32x32" />
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/stylesheet/sign-up.css">
+        <script src="/static/javascript/sign-up.js"></script>
+    </head>
+    <body>
+        <p class="intro">sign-up</p>
+        <div id="sign-up">
+            <div class="signupbox">
+                <form action="/log-in/sign-up-form" method="get">
+                    
+                    <label for="fname"></label>
+                    <input class="name"  id="fname" name ="fname" placeholder="name"><br>
+                    <label for="lname"></label>
+                    <input class="name"   id="lname" name ="lname" placeholder="last-name"><br>
+                    <label for="mbl">mobile No</label>
+                    <input class="signup-mbl" id="mbl" name ="mbl" pattern="{10}" placeholder="xxxxxxxxxx"><br>
+                    <label for="pin">Pincode</label>
+                    <input class="signup-pin" id="pin" name ="pin" pattern="[0,9]{4,6}" type="number" placeholder="XXXXXX"><br>
+                    <label for="mail">gmail</label>
+                    <input class="signup-gmail" onpointerleave="g_check()" id="mail" name ="mail" type="email" placeholder="@gmail.com"><br>
+                    <label for="pass">password</label>
+                    <input class="signup-pass" id="pass" name ="pass" title="more than 7character" pattern="{7,30}"type="password" placeholder="password">
+                    <p id="ins"></p>
+                    <button class="sign-up-submit" type="submit" >
+                    sign-up
+                    </button>
+        
+                </form></div> </div>
+    </body>
+</html>

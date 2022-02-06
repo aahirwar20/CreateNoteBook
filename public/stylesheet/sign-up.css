@@ -1,0 +1,131 @@
+body{
+    background-color: bisque;
+    text-align: center;
+}
+input:invalid{
+    border-color: red;
+    background-color: red;
+}
+.logbox{
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    left: 460px;
+  
+    height: 150px;
+    width: 300px;
+    border-radius: 10px;
+
+}
+.log-gmail{
+    position: absolute;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 20px;
+    left: 50px;
+    background-color: rgb(221, 250, 214);
+    margin-bottom: 10px;
+}
+.log-pass{
+    position: absolute;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 55px;
+    left: 50px;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+.signup-mbl{
+    position: absolute;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 55px;
+    left: 50px;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+#mail,#pin,#pass,#mbl{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 10px;
+    left: 20px;
+    align-items: center;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+lable{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 200;
+    top: 10px;
+    left: 0px;
+      
+    margin-bottom: 10px;
+}
+.log-submit{
+    position: absolute;
+    border-color: rgb(110, 110, 110);
+    border-radius: 5px;
+    height: 30px;
+    width: 50;
+    bottom: 10px;
+    left: 120px;
+    background-color: rgb(154, 225, 247);
+}
+.intro{
+    position: relative;
+    font-size: 100px;
+    left: -45px;
+    box-shadow: 20px;
+}
+.sign-up-call{
+    position: relative;
+    color: rgb(248, 123, 123);
+    top: 130px;
+    left: 60px;
+}
+.signupbox{
+    background-color: white;
+    position: absolute;
+    top: 140px;
+    left: 440px;
+   padding: 10px;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+}
+.sign-up-submit{
+    position: absolute;
+    border-color: rgb(110, 110, 110);
+    border-radius: 5px;
+    height: 30px;
+    width: 80;
+    bottom: 10px;
+    left: 120px;
+    background-color: rgb(154, 225, 247);
+}
+#fname{
+    position: absolute;
+width: 130px;
+top:10px;
+left:50px;
+background-color: rgb(211, 247, 191);
+}
+#lname{
+    position: absolute;
+    width: 130px;
+    top:10px;
+    right:50px;
+    background-color: rgb(211, 247, 191);
+}

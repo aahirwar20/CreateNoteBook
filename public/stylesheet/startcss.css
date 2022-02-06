@@ -1,0 +1,531 @@
+body{
+    position: relative;
+    background: #ffffff;
+ overflow-x: hidden;
+ padding-left: 0px;
+ top: 33px;
+}
+.row{
+    position: relative;
+    background-color: rgb(233, 252, 252);
+     width: 1000px;
+     height: 75px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     overflow-y: auto;
+     overflow-x:hidden;
+    
+}
+.row-name{  
+    position:absolute  ;
+ border-width: 0px    ;
+ border-radius: 10px 200px 10px 200px;
+ border-style: inset;
+ background:linear-gradient(to right, #73e09d 0%, #f1f396 100%);;
+ font-size: 20px;
+ font-weight: 200;
+ padding: 5px;
+ width: 180px;
+top: 15px;
+left: 20px;
+cursor: grab;
+padding-left: 30px;
+}
+.row-data{
+    position: absolute;
+    border-width: 0px    ;
+    border-radius: 10px;
+    border-style: inset;
+    background:linear-gradient(to right, #ffc0e5 0%, #ecdbee 100%);;
+    font-size: 20px;
+    padding: 5px;
+    width: 700px;
+    height: 20px;
+    top:15px;
+    left: 260px;
+    overflow: hidden;
+   }
+.Trow{
+    position: relative;
+    background-color: rgb(179, 181, 182);
+     width: 1025px;
+     height: 70px;
+     border: 2px;
+     border-radius: 10px;
+     border-style: ridge;
+     top: 20px;
+}
+.Trow-name{  
+    position: absolute;
+ border-width: 10px    ;
+ border-radius: 10px;
+ border-style: inset ;
+ border-top-color:  #c4c7c6;
+ border-left-color:  #cfd3d1;
+ background: linear-gradient(to bottom right , #76c1ff 0%, #fa95f1 100%);
+ font-size: 25px;
+ font-weight: 700;
+ padding:5px;
+ width: 215px;
+top: -20px;
+left: 15px;
+}
+.Trow-data{
+    position: absolute;
+    border-width: 10px    ;
+    border-radius: 10px;
+    border-style: inset;
+    border-top-color: #d3d4d3;
+ border-left-color: #cecfcf;
+    background: linear-gradient(to bottom right , #76c1ff 0%, #fa95f1 100%);;
+    font-size: 25px;
+    padding: 5px;
+    width: 725px;
+    top:-20px;
+    left: 260px;
+   }
+
+ .toolbar{
+     padding: 0px;
+     position: fixed ;
+     background-color: rgb(44, 41, 41);
+     width: 1270;
+     height: 40px;
+     border-radius: 0px;
+     z-index: 1;
+     margin: 0px;
+     top: 0px;
+     left: 0px;
+     
+ }  
+ .toolicon{
+     position: relative;
+     color: rgb(254, 254, 255);
+     font-size: 20px;
+     left: 200px;
+     bottom: 14px;
+     width: 55px;
+     height: 25px;
+     padding: 3px;
+     background-color: rgb(19, 19, 20);
+     border-radius: 5px;
+     padding-top: 1px;
+     padding-left: 10px;
+     border-width: 1px;
+     border-color: #eef0f0;
+     cursor: pointer;
+ }
+ .sign-in{
+    color: rgb(245, 245, 245);position: absolute; top: 5px;
+    right: 50px;
+    width: 70px;
+     height: 33px;
+    background-color: rgb(19, 19, 20);
+     border-radius: 5px;
+     padding-top: 1px;
+     padding-left: 10px;
+     border-width: 1px;
+     border-color: #eef0f0;
+     cursor: pointer;
+ }
+ .profile{
+     position: absolute;
+     right: 200px;
+     top:0px;
+     color: #f9f3fa;
+ }
+ img{
+     position: relative;
+     height: 400px;
+     width: 800px;
+     z-index: -1;
+     top: 0px;
+ }
+ .data-border{
+    position: relative;
+     visibility: visible;
+     height: 320px;
+     width:1022px;
+     border-radius: 10px;
+     border-style: solid;
+     border-width: 2px;
+     border-color: rgb(214, 214, 214);
+     overflow-y: auto;
+     background-color: rgb(211, 209, 209);
+    overflow-x: hidden;
+     top: 20px;
+ }
+ .feature{
+     visibility: visible;
+     position: relative;
+     height: 250px;
+     width: auto;
+ top: 0px;
+ left: 0px;
+    padding-left: 0px;
+     background:linear-gradient(to right bottom, #9154f3 0%, #fdacfd 100%);
+     border-radius: 10px;
+     overflow: hidden;
+     animation: slide-down 1s linear 0s forwards;
+ }
+ @keyframes slide-down {
+     from{height: 0%;}
+     to{height: 40%;}
+     
+ }
+ .material-icons
+
+
+.ball{
+       position: absolute;
+      
+       background :radial-gradient(red,rgb(109, 31, 37));
+       bottom: -10px;
+       left: 20px;
+       z-index: 1;
+       width: 80px;
+       height: 80px;
+       border-radius: 50%;
+    }
+.ball{
+    animation: 
+    x  2s linear infinite alternate ,
+    y  2s infinite cubic-bezier(0,20,1,20) ;
+}
+
+@keyframes x {
+    to{left: calc(100% - 100px);}
+}
+@keyframes y {
+    to{bottom: -0px;}
+}
+
+ .last-feed{
+    visibility: visible;
+    position: relative;
+    height: 250px;
+    width: auto;
+
+   padding-left: 0px;
+    background:linear-gradient(to  bottom, #dfe0df 0%, #f5f5f5 100%);
+    border-radius: 10px;
+    top: 40px;
+    
+ }
+ .add{
+    position: relative;
+    background-color: rgb(48, 100, 105);
+     width: 1020px;
+     height: 66px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     top: 20px;
+     overflow-y: auto;
+     
+     
+ }
+ .add-name{
+     position: relative;
+     width :200px;
+     padding-left: 10px;
+     top: 5px;
+     left: 0px;
+     height: 40px;
+     border-radius: 20px;
+     border-width: 1px;
+     font-size: 15px;
+ }
+ .add-data{
+     
+    position: relative;
+    width :250px;
+    padding-left: 10px;
+    top: 15px;
+    left: 5px;
+    border-radius: 5px;
+    height: 200px; 
+    font-size: 15px;
+    overflow: hidden;
+ }
+ .add-send{
+    position: absolute;
+    
+    height: 40px; 
+    top :5px;
+    right: 5px;
+    border-radius: 0px 10px 10px 0px;
+    border-width: 1px;
+    background-color: #9154f3;
+    
+ }
+ .b1{
+    
+     color: rgb(253, 254, 255);
+     border-color: rgb(251, 254, 255);
+     position: absolute; top:45px;
+        left: 955px;
+        height: 30px;
+        width: 30px;
+        padding-left: 1px;
+ }
+ .short{
+     background-color: #73e09d;
+     border-color: #73e09d;
+     position: relative;
+     top: 0px;
+     height: 30px;
+     width: 30px;
+ }
+ .row-data-ex{
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 70px;
+    top:20px;
+    left:0px;
+
+}
+.row-name-ex{
+    padding-left: 350px;
+    font-weight: 600;
+
+}
+.other-p{
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 80px;
+    height: 25px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom:0px;
+    padding-left: 0px;
+    border-radius: 5px;
+    top: -2px;
+    left: -5px;
+    border-width: 1px;
+    border-color: #1b1b1b;
+    border-style: solid;
+}
+.other{
+   
+    position: absolute;
+    visibility: visible;
+    z-index: -1;
+    left: -84px;
+    top: -10px;
+    visibility: visible;
+    width: 0px;
+}
+.extra{
+    position: absolute;
+     top:15px;
+        left: 960px; cursor: default;
+}
+.other-pb{
+    padding: 0px ; width: 80px;height: 30px;
+    border-radius: 5px;
+
+}
+.more-b{
+    position: relative;
+    left: -4px;
+    width: 40px;
+}
+.oadd{
+    position: relative;
+    background-color: rgb(228, 242, 247);
+     width: 1010px;
+     height: 75px;
+     max-height: 110px;
+     border: 2px;
+     border-radius: 20px;
+     border-style: ridge;
+     top: 0px;
+     overflow-y: auto;
+     overflow-x: hidden;
+     
+}
+#myCanvas{
+    position: relative;
+    left: 100px;
+    top: 50px;
+    
+}
+.log_in{
+    position: absolute;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: medium;
+    top: 0px;
+    
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px rgb(110, 110, 110),2px 1px 2px rgb(173, 172, 172);
+}
+.log_in:hover{
+    visibility: visible;
+}
+.feedback{
+    
+    position: relative;
+    
+    left: 20px;
+    top: 5px;
+}
+.feed_input{
+    position: relative;
+    height: 170px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgb(95, 94, 94);
+    
+}
+.feed_submit{
+   position: relative;
+   height: 25px;
+   width: 90px;
+   background-color: #9154f3;
+   border-radius: 5px;
+   font-size: medium;
+}
+
+.data{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: inline-block;
+}
+.box{
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    border-width: 0px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(248, 249, 250, 0.3);
+    box-shadow: 1px 1px 10px rgb(119, 119, 119);
+    margin-left: 50px;
+    margin-bottom: 50px;
+    animation: box_ant 1s linear backwards;
+}
+@keyframes box_ant {
+    10% {transform:rotate(-30deg);
+        left: -30%; }
+    100%{transform:rotate(0deg);
+        left: 0%;}
+    
+}
+.down-line{
+    position: absolute;
+    width: 80%;
+    height: 8px;
+    overflow: hidden;
+ 
+    border-radius: 4px;
+    left: 10%;
+    bottom: 10px;
+}
+.design-circle{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top:-65px;
+    left: -400px;
+    border-radius: 50%; 
+    border-width: 500px;
+    border-style: solid;
+border-top-color: #eb4d25;
+border-bottom-color: yellow;
+border-left-color: green;
+border-right-color:blue ;
+animation: circle_rotate 2s linear 0s infinite forwards ;
+}
+@keyframes circle_rotate{
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+#box_other{
+position: absolute;
+right: 20px;
+top: 40px;
+}
+.submenu{
+    position: absolute;
+    
+}
+.c-button1{
+    position: relative;
+    height: 30px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgba(146, 40, 233, 0.8);
+    border-width: 1px;
+    color: #fafafa;
+}
+#add-one{
+    position: absolute;
+   left: 5px;
+   top: 10px;
+}
+#ubox::before{
+    content:'';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+   background-color: #fc3b0b;
+   left: 7px;
+   top:9px
+
+
+}
+.social{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    right: 0px;
+    top:0px;
+    background-color: rgb(249, 249, 250,0.0);
+    
+}
+.fa-facebook {
+    background-color: #2469f3;
+    color: rgb(250, 250, 250);
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+.fa-instagram {
+    background: linear-gradient(to bottom, #6e0bf0 0%, red 50%, #facf0f 100%);
+    color: white;
+    
+}  
+.fa-linkedin {
+    background-color: #2e98fc;
+    color: white;
+}  
+.fa-twitter {
+    background-color: #3ceaf0;
+    color: white;
+}  
