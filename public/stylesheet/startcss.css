@@ -5,6 +5,60 @@ body{
  padding-left: 0px;
  top: 33px;
 }
+.active{
+    position: fixed;
+    border-radius: 20px;
+    
+    bottom:10px;
+    right: 10px;
+    height: 5%;
+    width: 2%;
+    background-color: rgb(166, 24, 248);
+    border: solid black;
+    border-width: 0px;
+    color: #1b1b1b;
+    text-align: center;
+    block-size: center;
+ 
+    z-index: 2;
+    overflow-y: hidden;
+    overflow-x: hidden ;
+    
+}
+.active:hover{
+    border-width: 2px;
+    height: 80%;
+    width: 20%;
+    overflow-y: scroll;
+    background-color: rgb(239, 243, 247);
+}
+.a_ball{
+    position: relative;
+    z-index: 3;
+    background-color: #73e09d;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    top: 10px;
+    left: 3px;
+}
+.users{
+    position: relative;
+    color: #1b1b1b;
+    background-color: #ffffff;
+    height: 25px;
+    width: 90%;
+    margin-top: 3%;
+ left: 10px;
+    border-radius: 10px;
+    align-items: center;
+    z-index: 3;
+    padding-bottom: 6px;
+}
+.users:hover{
+    background-color: #c654f3;
+}
+
 .row{
     position: relative;
     background-color: rgb(233, 252, 252);

@@ -7,7 +7,7 @@ function g_check(){
     if (this.readyState == 4 && this.status == 200) {
       
      var a=this.responseText;
-     console.log(a);
+    
      if(a=='0'){
        document.getElementById('in').innerHTML='correct gmail ';
      }

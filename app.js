@@ -11,6 +11,8 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var indexrouter=require('./routes/index');
 var addrouter=require('./routes/add');
+var http=require('http').Server(app);
+
 
 // view engine setup
 app.use(logger('dev'));
@@ -34,6 +36,9 @@ app.use(upload.array());
   app.use('/note',function(req,res,next){
     res.redirect('/log-in');
 });
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

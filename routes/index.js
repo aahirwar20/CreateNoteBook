@@ -168,6 +168,8 @@ router.get('/update',check_sign_in,function(req,res){var i;
    else{
       var b= {id:id,password:response[0].pass};
        req.session.user=b;
+       var name=response[0].fname+''+response[0].lname;
+    
        res.redirect('/note');}});
  });
 

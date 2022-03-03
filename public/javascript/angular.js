@@ -1,6 +1,6 @@
 var app =angular.module('myapp',[]);
 app.controller('myCtrl',function($scope,$http,$q){
-   
+    
    $scope.uname='';
    $scope.udata='';
    
@@ -14,13 +14,12 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.show_send[id]=!$scope.show_send[id];
     }
     $scope.send=function(id){
-       console.log($scope.mail[id]);
+      
         var sn ='/add_send?to_mail='+$scope.mail[id]+'&name='+$scope.k[id].name+'&data='+$scope.k[id].data;
         
 
         $http.get(sn).then(function(response){
             $scope.show_send[id]=false;
-            console.log(response);
         });
     }
 
@@ -56,7 +55,7 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.lastname=response[0].data.lname;
         $scope.k=response[1].data.note;
         $scope.sends=response[2].data.send;
-        console.log(response[2].data);
+        
         $scope.update =function(id){
             $scope.uname=$scope.k[id].name;
             $scope.udata=$scope.k[id].data;
@@ -76,6 +75,17 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.mail.push('');
     }
      
+    var socket=io();
+    var name=$scope.firstname +' '+$scope.lastname;
+    socket.emit('name',name);
+    socket.on('users',function(users){
+        for(x of users){
+          document.querySelector('.active').innerHTML+='<div class="users" ><div class="a_ball"></div>'+x+'</div>'   
+         }
+     
+         console.log($scope.users_name);
+         console.log($scope.sends);
+     });
     });
 });
 
