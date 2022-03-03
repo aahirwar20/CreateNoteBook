@@ -17,6 +17,7 @@ Ankit AHIRWAR
 ### backend 
 - Node js   
 - Express js
+-socket.js
  
 - MongoDB as database
   mongoose as schema for model application
