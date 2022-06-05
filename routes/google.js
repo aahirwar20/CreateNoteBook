@@ -16,8 +16,8 @@ passport.serializeUser(function(user, cb) {
   });
 
   const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = '367127692858-5kihamh7pif51597uvclh37746vhjbdb.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GOOGLE_CLIENT_ID = 'Google_Clint_ID.apps.googleusercontent.com';
+const GOOGLE_CLIENT_SECRET = 'GOOGLE_SECRET';
 var b;
 
 passport.use(new GoogleStrategy({
