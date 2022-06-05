@@ -11,8 +11,9 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var indexrouter=require('./routes/index');
 var addrouter=require('./routes/add');
+var googlerouter=require('./routes/google');
 var http=require('http').Server(app);
-
+var passport = require('passport');
 
 // view engine setup
 app.use(logger('dev'));
@@ -27,8 +28,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(upload.array());
 
 
-
-
+  app.use('/',googlerouter);
   app.use('/',indexrouter);
   app.use('/',addrouter);
   

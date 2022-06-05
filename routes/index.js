@@ -4,14 +4,14 @@ var fs = require('fs');
 var bodyparser=require('body-parser');
 var multer =require('multer');
 var upload= multer();
-var mongoose= require('mongoose');
+var {mongoose,sign_up,count}=require('./mongoose');
 var url =require('url');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 
 var  router = express.Router();
 
-mongoose.connect('mongodb://localhost:27017/my_db');
+
  
 var formschema =mongoose.Schema({
     s_no:Number,
@@ -39,25 +39,8 @@ var feedbackschema =mongoose.Schema({
 });
 
 var feedback = mongoose.model("feedback",feedbackschema);
-var countschema =mongoose.Schema({
-    count:Number
-    
 
-});
 
-var count = mongoose.model("count",countschema);
-var sign_upschema =mongoose.Schema({
-    s_no:Number,
-    fname: String,
-    lname: String,
-    mbl: String,
-    pin: Number,
-    mail: String,
-    pass: String
-
-});
-
-var sign_up = mongoose.model("sign_up",sign_upschema);
 /* GET home page. */
 function check_sign_in(req,res,next){
     if(req.session.user){next();}
@@ -169,8 +152,8 @@ router.get('/update',check_sign_in,function(req,res){var i;
       var b= {id:id,password:response[0].pass};
        req.session.user=b;
        var name=response[0].fname+''+response[0].lname;
-    
-       res.redirect('/note');}});
+   
+      res.redirect('/note');}});
  });
 
  router.post("/g_check",function(req,res){
@@ -192,11 +175,21 @@ router.get('/update',check_sign_in,function(req,res){var i;
        if(response[0]==null){flag=1;}
 if(flag==1){
     var c;
+    
      count.find({},function(err,data){
+        if(data.length==0){
+            var formcount=new count({count:1});
+            formcount.save(function(err,data){
+                if(err){throw err;}
+            });
+            c=1;
+        }
+        else{
+         console.log("hello");
           c=data[0].count+1;
          var co={count:c};
        count.updateMany({},co,function(err,data){
-             if(err){throw err;}
+             if(err){throw err;}})}
     
 var formbody= new sign_up({
          s_no:c,
@@ -210,12 +203,12 @@ var formbody= new sign_up({
    
    formbody.save(function(err,sign_up){
        if(err){throw err;}
-   }); });
+   });
    var b= {id:c,password:qu.pass};
        req.session.user=b;
        res.redirect('/note');
-   });
-   }
+});
+}
      else{res.redirect('/log-in/sign-up');}});
 });
 
@@ -296,5 +289,9 @@ send.find(k,function(err,data){
    res.send(m);
    
 });});
+
+
 });
+
+
   module.exports =router;

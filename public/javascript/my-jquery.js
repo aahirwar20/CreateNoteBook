@@ -36,9 +36,16 @@ $(document).ready(function(){
         $(".toolicon").css({"color": "rgb(254, 254, 255)","background-color": "rgb(19, 19, 20)" }) 
       });
       
-
+    $(".active_bar").click(function(){
+      $(".active").css({"display":"inline"})
+    });
+    $(".active").mouseleave(function(){
+      $(".active").css({"display":"none"})
+    });
      
     
+    },function(){
+      $(".active").css({"display":"none"})
     });
    
     function show_feed(){

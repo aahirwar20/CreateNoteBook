@@ -11,9 +11,12 @@ body{
     
     bottom:10px;
     right: 10px;
-    height: 5%;
-    width: 2%;
-    background-color: rgb(166, 24, 248);
+    border-width: 2px;
+    height: 80%;
+    width: 20%;
+    overflow-y: scroll;
+    background-color: rgb(239, 243, 247); 
+    display: none;
     border: solid black;
     border-width: 0px;
     color: #1b1b1b;
@@ -25,13 +28,30 @@ body{
     overflow-x: hidden ;
     
 }
-.active:hover{
-    border-width: 2px;
-    height: 80%;
-    width: 20%;
-    overflow-y: scroll;
-    background-color: rgb(239, 243, 247);
+.active_bar{
+    position: fixed;
+    border-radius: 20px;
+    
+    bottom:10px;
+    right: -100px;
+    height: 7%;
+    width: 12%;
+    background-color: #1b1b1b;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    font-size: larger;
 }
+.active_bar:hover{
+    background-color: #3c3d3c;
+     animation: active_move 100ms linear  forwards;
+}
+@keyframes active_move {
+    from{right: -100px;}
+    to{right: -10px;}
+    
+}
+
 .a_ball{
     position: relative;
     z-index: 3;
@@ -145,7 +165,7 @@ left: 15px;
      padding: 0px;
      position: fixed ;
      background-color: rgb(44, 41, 41);
-     width: 1270;
+     width: 100%;
      height: 40px;
      border-radius: 0px;
      z-index: 1;

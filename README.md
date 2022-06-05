@@ -27,7 +27,3 @@ Ankit AHIRWAR
  command -
  git clone 
   npm install 
-<<<<<<< HEAD
-
-=======
->>>>>>> fe477a186dcf29c1baa185b947c36cb1a302f31f

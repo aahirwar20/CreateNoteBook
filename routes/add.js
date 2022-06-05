@@ -1,14 +1,10 @@
 var express =require('express');
 var app= express();
-var fs = require('fs');
-var bodyparser=require('body-parser');
 var multer =require('multer');
 var upload= multer();
 var mongoose= require('mongoose');
 var url =require('url');
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var records=[];
+
 var  router = express.Router();
 function check_sign_in(req,res,next){
     if(req.session.user){next();}
@@ -23,6 +19,9 @@ function check_feed(req,res,next){
 else{res.redirect('/log-in');}
 
 }
+
+
+
 
 router.get("/log-in",function(req,res){
       res.render('log-in.html');                    });

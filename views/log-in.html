@@ -4,11 +4,18 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/static/stylesheet/log-in.css">
         <script src="/static/javascript/log-in.js"></script>
+       
         <title>Creative Notebook</title>
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log(profile);
+              }</script>
     </head>
     <body>
         <p class="intro">login</p>
         <div class="box">
+            
         <form action="/log-in/login-form",method="get">
             <input class="log-gmail" id="mail" name ="mail" onpointerleave="g_check()" type="email" placeholder="@gmail.com">
             <input class="log-pass" name="pass" type="password" placeholder="password">
@@ -17,9 +24,12 @@
             log in
             </button>
          </form>
+
          <div class="down-line">
             <p class="design-circle"></p> </div>
     </div>
+    
+   <a href="/log-in/google" ><button class="c-button1" id="g_sign">SignIn with google</button></a>
     <a href="./log-in/sign-up" ><button  class="c-button1"  id="sign-up-call">sign up</button></a>
     
     </body>
