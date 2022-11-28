@@ -4,41 +4,16 @@ var fs = require('fs');
 var bodyparser=require('body-parser');
 var multer =require('multer');
 var upload= multer();
-var {mongoose,sign_up,count}=require('./mongoose');
+var {mongoose,sign_up,count,count,form,send,feedback}=require('./mongoose');
 var url =require('url');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-
+//const nodemailer =require("nodemailer");
+var mailTranspoter=require('./mail');
 var  router = express.Router();
 
 
  
-var formschema =mongoose.Schema({
-    s_no:Number,
-    name: String,
-    data: String,
-    
-
-});
-
-var form = mongoose.model("form",formschema);
-var sendschema =mongoose.Schema({
-    from:{id:Number,name:String,mail:String},
-    to:{id:Number,mail:String},
-    name: String,
-    data: String,
-    });
-
-var send = mongoose.model("send",sendschema);
-var feedbackschema =mongoose.Schema({
-    s_no:Number,
-    feed: String
-    
-    
-
-});
-
-var feedback = mongoose.model("feedback",feedbackschema);
 
 
 /* GET home page. */
@@ -256,8 +231,18 @@ router.get("/add_feed",check_feed,function(req,res){
 
 router.get('/add_send',check_sign_in,function(req,res){
    var qu=url.parse(req.url,true).query;
-  
-  sign_up.find({s_no:req.session.user.id},function(err,from_data){
+   let mailDetails={
+    from:"ankitahirwarvinod2@gmail.com",
+    to:qu.to_mail,
+    subject:"test",
+    text:"nice to me"+qu.name+' '+qu.data+' ',
+   };
+  mailTranspoter.sendMail(mailDetails,function(err,data){
+    if(err){throw err;}
+    else{console.log("email sent succefully")}
+  });
+  res.send('succesfully add');
+  /*sign_up.find({s_no:req.session.user.id},function(err,from_data){
       if(err){throw err;}
      
       sign_up.find({mail:qu.to_mail},function(err,to_data){
@@ -276,7 +261,7 @@ router.get('/add_send',check_sign_in,function(req,res){
            });
       });
 
-  });
+  });*/
 });
 router.get('/find_send',check_sign_in,function(req,res){
     sign_up.find({s_no:req.session.user.id},function(err,sign){

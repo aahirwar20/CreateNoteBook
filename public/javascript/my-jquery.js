@@ -26,7 +26,7 @@ $(document).ready(function(){
         setInterval(() => {
           location.reload();
         },100);
-        console.log("yes");
+       
       });
 
       $(".toolicon").mouseenter(function(){

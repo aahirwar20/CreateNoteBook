@@ -79,12 +79,12 @@ app.controller('myCtrl',function($scope,$http,$q){
     var name=$scope.firstname +' '+$scope.lastname;
     socket.emit('name',name);
     socket.on('users',function(users){
+        document.querySelector('.active').innerHTML=''
         for(x of users){
           document.querySelector('.active').innerHTML+='<div class="users" ><div class="a_ball"></div>'+x+'</div>'   
          }
      
-         console.log($scope.users_name);
-         console.log($scope.sends);
+        
      });
     });
 });

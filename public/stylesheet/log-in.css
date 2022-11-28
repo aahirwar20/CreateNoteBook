@@ -154,10 +154,25 @@ top: 40px;
     background-color: rgba(148, 32, 243, 0.8);
     border-width: 1px;
     color: #fafafa;
-    bottom: 40px;
+    bottom: 30px;
     left: 30%;
 }
 
 .c-button1:hover{
+    background-color: rgba(146, 40, 233, 0.5);
+}
+.g-button1{
+    position: absolute;
+    height: 30px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: rgba(148, 32, 243, 0.8);
+    border-width: 1px;
+    color: #ebfb3d;
+    bottom: 15%;
+    left: 41%;
+}
+
+.g-button1:hover{
     background-color: rgba(146, 40, 233, 0.5);
 }

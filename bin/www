@@ -16,24 +16,10 @@ var port = normalizePort(process.env.PORT || '3450');
 app.set('port', port);
 var server = http.createServer(app);
 var io=require('socket.io')(server);
-var users=[];
+
+var ios=require('../routes/socket').start(io);
 
 
-io.on('connection',function(socket){
-  var a=0;
- 
-  socket.on('name',function(name){
-    for(let x of users){
-      if(x==name){a=1};
-    }
-    if(a==0){users.push(name);}
-    
-    io.sockets.emit('users',users);
-  });
-  socket.on('disconnect', function () {
-    console.log('A user disconnected');
- });
-});
 /**
  * Create HTTP server.
  */
@@ -107,3 +93,4 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+module.exports=io;

@@ -1,5 +1,5 @@
 body{
-    background-color: bisque;
+    background-color: rgb(234, 232, 231);
     text-align: center;
 }
 input:invalid{
@@ -50,14 +50,50 @@ input:invalid{
     background-color: rgb(211, 247, 191);  
     margin-bottom: 10px;
 }
-#mail,#pin,#pass,#mbl{
+#mbl{
     position: relative;
     border-color: black;
     border-radius: 5px;
-    height: 30px;
+    height: 25px;
     width: 200;
     top: 10px;
     left: 20px;
+    align-items: center;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+#pass{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 25px;
+    width: 200;
+    top: 10px;
+    left: 23px;
+    align-items: center;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+#pin{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 25px;
+    width: 200;
+    top: 10px;
+    left: 28px;
+    align-items: center;
+    background-color: rgb(211, 247, 191);  
+    margin-bottom: 10px;
+}
+#mail{
+    position: relative;
+    border-color: black;
+    border-radius: 5px;
+    height: 25px;
+    width: 200;
+    top: 10px;
+    left: 35px;
     align-items: center;
     background-color: rgb(211, 247, 191);  
     margin-bottom: 10px;
@@ -96,12 +132,13 @@ lable{
     left: 60px;
 }
 .signupbox{
-    background-color: white;
+    background-color: rgba(248, 249, 250, 1);
+    box-shadow: 1px 1px 10px rgb(119, 119, 119);
     position: absolute;
     top: 140px;
-    left: 440px;
+    left: 500px;
    padding: 10px;
-    height: 400px;
+    height: 250px;
     width: 400px;
     border-radius: 10px;
 }
@@ -112,20 +149,20 @@ lable{
     height: 30px;
     width: 80;
     bottom: 10px;
-    left: 120px;
+    left: 160px;
     background-color: rgb(154, 225, 247);
 }
 #fname{
     position: absolute;
-width: 130px;
+width: 140px;
 top:10px;
-left:50px;
+left:60px;
 background-color: rgb(211, 247, 191);
 }
 #lname{
     position: absolute;
-    width: 130px;
+    width: 140px;
     top:10px;
-    right:50px;
+    right:60px;
     background-color: rgb(211, 247, 191);
 }

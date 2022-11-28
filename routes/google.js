@@ -16,8 +16,8 @@ passport.serializeUser(function(user, cb) {
   });
 
   const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = 'Google_Clint_ID.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = 'GOOGLE_SECRET';
+const GOOGLE_CLIENT_ID = 'Clint_id';
+const GOOGLE_CLIENT_SECRET = 'screte_id';
 var b;
 
 passport.use(new GoogleStrategy({
@@ -33,7 +33,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 router.get('/log-in/google', 
-  passport.authenticate('google', { scope : ['profile', 'email'] }),function(req,res){});
+  passport.authenticate('google', { scope : ['profile', 'email'],prompt:"select_account" }),function(req,res){});
  
 
  
@@ -59,7 +59,7 @@ router.get('/log-in/google/callback',
     if(t.emails[0].verified){
       sign_up.find({pass:t.id,mail:t.emails[0].value},function(err,data){
           if(data.length==0){
-            console.log(t);
+           
             var c;
      count.find({},function(err,data){
 
@@ -95,7 +95,10 @@ router.get('/log-in/google/callback',
            });
           }
  else{
-              req.redirect('/note');
+  var k= {id:data[0].s_no,password:data[0].pass};
+  req.session.user=k;
+      
+              res.redirect('/note');
           }
       
     }) }})

@@ -40,9 +40,12 @@ router.get("/log-in/sign-up",function(req,res){
   });
  
   router.get("/log-out",function(req,res){
-  req.session.destroy(function(){
-      res.redirect('/log-in');
-  })
+    
+    req.session.destroy(function(){
+        res.redirect('/log-in'); 
+    });
+  
+  
   });
  router.get("/feed_check",check_feed,function(req,res){
     res.render('feedback.html');

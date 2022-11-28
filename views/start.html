@@ -1,6 +1,6 @@
 <html lang="en" id="home">
     <head>
-      <link rel="icon" type="image/png" href="/static/image/icon.jpg" sizes="32x32" />
+      <link rel="icon" type="image/png" href="/static/image/note7.png" sizes="32x32" />
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Creative Notebook</title>
@@ -28,9 +28,36 @@
        </div>
   <script src="/static/javascript/angular.js">
  </script>
-<div class="feature"></div>
+<div class="feature">
+  <img style=" position :absolute;left: 0px; top:0px; z-index: 0; height: 250px ;width: 350px;" src="/static/image/note4.png" alt="Girl in a jacket" width="200" height="200" >
+  <img style=" position :absolute;right: 0px; top:0px; z-index: 0; height: 250px ;width: 350px;" src="/static/image/note6.png" alt="Girl in a jacket" width="200" height="200" >
+</div>
     
-   
+<div class="box"  style="top: 50px;">
+  <span class="material-icons" id="add-one" >note_add</span>
+  <form action="/form" method="get">
+      <input class="add-name" id="fn" name="name" placeholder="Name">
+      <textarea class="add-data" id="fd" name="data" value="good" placeholder="Enter the data....."></textarea>
+      <button class="add-send" type="submit" >
+        <i class="material-icons">send</i>
+        </button>
+  </form>
+  
+  <div class="down-line">
+  <p class="design-circle"></p> </div>
+  </div>
+
+  <div class="box" ng-show="ushow" id="ubox" style="top: 50px;">
+    <span class="material-icons" id="add-one" >note_add</span>
+        <input class="add-name" id="fn" name="name" placeholder="Update Name" ng-model="uname">
+        <textarea class="add-data" id="fd" name="data" value="good" placeholder="Update data....." ng-model="udata"></textarea>
+        <button class="add-send" type="submit" ng-click="usubmit(uid)">
+          <i class="material-icons">send</i>
+          </button>
+    
+    <div class="down-line">
+    <p class="design-circle"></p> </div>
+    </div>  
 
 <div class="data">
 <div class='box' ng-repeat="x in k" >
@@ -42,10 +69,10 @@
   <ul><button class="c-button1" ng-click="update(x.id)" >Update</button></ul>
   <ul><button class="c-button1" ng-click="delete(x.id)" >Delete</button></ul>
   <ul><button class="c-button1" ng-click="show4(x.id)" >Send</button>
-  <ul class="sub_menu2" ng-show="show_send[x.id]">
-    <input id="add_mail" type="email" placeholder="gmail.com" name="to_mail"ng-model="mail[x.id]"> 
-    <button type="submit" class="c_button1" ng-click="send(x.id)">Send</button>
-  </ul>
+    <ul class="sub_menu2" ng-show="show_send[x.id]" style="position:absolute;left: -10px;bottom:30px">
+      <input id="add_mail"type="email" placeholder="gmail.com" name="to_mail"ng-model="mail[x.id]"> 
+      <button type="submit" style="background-color: rgb(217, 43, 226);"class="c_button1" ng-click="send(x.id)">Send</button>
+    </ul>
   </ul>
 </ul> 
 </ul>
@@ -54,31 +81,7 @@
 <p class="design-circle"></p> </div>
 </div>
 
-<div class="box">
-<span class="material-icons" id="add-one" >note_add</span>
-<form action="/form" method="get">
-    <input class="add-name" id="fn" name="name" placeholder="Name">
-    <textarea class="add-data" id="fd" name="data" value="good" placeholder="Enter the data....."></textarea>
-    <button class="add-send" type="submit" >
-      <i class="material-icons">send</i>
-      </button>
-</form>
 
-<div class="down-line">
-<p class="design-circle"></p> </div>
-</div>
-
-<div class="box" ng-show="ushow" id="ubox">
-<span class="material-icons" id="add-one" >note_add</span>
-    <input class="add-name" id="fn" name="name" placeholder="Update Name" ng-model="uname">
-    <textarea class="add-data" id="fd" name="data" value="good" placeholder="Update data....." ng-model="udata"></textarea>
-    <button class="add-send" type="submit" ng-click="usubmit(uid)">
-      <i class="material-icons">send</i>
-      </button>
-
-<div class="down-line">
-<p class="design-circle"></p> </div>
-</div>
 </div>
 <div class="data">
   <div class='box' ng-repeat="x in sends" >

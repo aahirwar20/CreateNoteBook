@@ -12,6 +12,24 @@ body{
     margin-top: 0px;
     width: 101.8%;
 }
+
+.note7{
+    position: absolute; 
+    right:10%;
+    top: 7%  
+   }
+
+.note1{
+ position: absolute; 
+ left:40%;
+ top: 0  
+}
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 .top{
     position: relative;
     display:block;
@@ -21,7 +39,7 @@ body{
 }
 #top-1{
 
-height: 20px;
+height: 30px;
 }
 #top-2{
 
@@ -69,7 +87,7 @@ text-shadow: 1px 1px 1px rgb(49, 48, 48),3px 3px 3px rgb(173, 172, 172);
 .middle{
     width: 100%;
     position: relative;
-    height: 500px;
+    height: 400px;
 }
 .foot{
     position: absolute;
