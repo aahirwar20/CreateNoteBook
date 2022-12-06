@@ -1,5 +1,5 @@
 var mongoose= require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/my_db');
+mongoose.connect(${{secrets.MONGODBKEY}});
 var sign_upschema =mongoose.Schema({
     s_no:Number,
     fname: String,

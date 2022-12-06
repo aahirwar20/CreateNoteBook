@@ -16,8 +16,8 @@ passport.serializeUser(function(user, cb) {
   });
 
   const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = ' Google Client Id';                                                 //Write Google Client Id 
-const GOOGLE_CLIENT_SECRET = ' Google Client Secret Key';                                            //Write Google Client Secret Key 
+const GOOGLE_CLIENT_ID = ${{secrets.GOOGLEID}};                                                 //Write Google Client Id 
+const GOOGLE_CLIENT_SECRET = ${{secrets.GOOGLESECRET}};                                            //Write Google Client Secret Key 
 var b; 
 
 passport.use(new GoogleStrategy({

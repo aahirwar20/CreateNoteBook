@@ -4,8 +4,8 @@ Noted website
 ## IT is a Notes creating website 
 
 ### frontend
-- [HTML/CSS]( (https://developer.mozilla.org/en-US/))
-- [JavaScript]((https://developer.mozilla.org/en-US/))
+- [HTML/CSS] (https://developer.mozilla.org/en-US/)
+- [JavaScript](https://developer.mozilla.org/en-US/)
 - [Angular.js](https://angular.io/)
 - [Jquary](https://jquery.com/)
 
