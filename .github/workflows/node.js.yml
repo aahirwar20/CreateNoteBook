@@ -24,7 +24,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       env:
-        MONGODBKEY: ${{ secrets.MONGODBKEY }},
+        MONGODBKEY: ${{ secrets.MONGODBKEY }}
         GOOGLEID: ${{ secrets.GOOGLEID }}
         GOOGLESECRET: ${{ secrets.GOOGLESECRET }}
         GMAIL: ${{ secrets.GMAIL}}
