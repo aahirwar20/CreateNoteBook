@@ -31,7 +31,7 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD}}
         CLIENTID: ${{ secrets.CLIENTID }}
         CLIENTSECRET: ${{ secrets.CLIENTSECRET}}
-        REFRESHTOKEN: ${{ secretsREFRESHTOKEN}}
+        REFRESHTOKEN: ${{ secrets.REFRESHTOKEN}}
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
