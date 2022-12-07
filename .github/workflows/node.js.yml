@@ -35,13 +35,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        GOOGLEID: ${{ secrets.GOOGLEID }}
-        GOOGLESECRET: ${{ secrets.GOOGLESECRET }}  
-        GMAIL: ${{ secrets.GMAIL}}
-        PASSWORD: ${{ secrets.PASSWORD}}
-        CLIENTID: ${{ secrets.CLIENTID }}
-        CLIENTSECRET: ${{ secrets.CLIENTSECRET}}
-        REFRESHTOKEN: ${{ secrets.REFRESHTOKEN}}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
