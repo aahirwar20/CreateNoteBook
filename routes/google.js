@@ -1,6 +1,6 @@
 var express=require('express');
 var  router = express.Router();
-require("dotenv").config();
+require('dotenv').config()
 var passport = require('passport');
 var {mongoose,sign_up,count}=require('./mongoose');
 var userProfile =[];

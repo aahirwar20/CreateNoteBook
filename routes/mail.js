@@ -1,5 +1,5 @@
 const nodemailer =require("nodemailer");
-require("dotenv").config();
+require('dotenv').config()
 var secure_configuration ={
     EMAIL_USERNAME:process.env.GMAIL,                                   //Write your Mail ID
     PASSWORD:process.env.PASSWORD,                                      //Write Your Password 
