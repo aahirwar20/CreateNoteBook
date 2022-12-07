@@ -1,5 +1,6 @@
 var mongoose= require('mongoose');
-mongoose.connect(${{secrets.MONGODBKEY}});
+require("dotenv").config();
+mongoose.connect(process.env.MONGODBKEY);
 var sign_upschema =mongoose.Schema({
     s_no:Number,
     fname: String,

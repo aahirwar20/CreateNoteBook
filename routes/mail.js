@@ -1,11 +1,11 @@
 const nodemailer =require("nodemailer");
-
+require("dotenv").config();
 var secure_configuration ={
-    EMAIL_USERNAME:'Mail_Id',                                   //Write your Mail ID
-    PASSWORD:'Password',                                      //Write Your Password 
-    CLIENT_ID: '367127692858-a6flma77nn516lt1ptsi30cq3729hf5r.apps.googleusercontent.com',
-    CLIENT_SECRET:'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',
-    REFRESH_TOKEN:"1//046KfIKn9RMj7CgYIARAAGAQSNwF-L9IrhQL4UkjKWErozGsBJbIXxHVrhQmk-ZItgQeCaSca_xep5zijR7MlEnjAr2Ne-CXt-LI",
+    EMAIL_USERNAME:process.env.GMAIL,                                   //Write your Mail ID
+    PASSWORD:process.env.PASSWORD,                                      //Write Your Password 
+    CLIENT_ID: process.env.CLIENTID,
+    CLIENT_SECRET:process.env.CLIENTSECRET,
+    REFRESH_TOKEN:process.env.REFRESHTOKEN,
 }
 
 let mailTranspoter =nodemailer.createTransport({

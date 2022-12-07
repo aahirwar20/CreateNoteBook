@@ -23,6 +23,15 @@ jobs:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
+      env:
+        MONGODBKEY: ${{ secrets.MONGODBKEY }},
+        GOOGLEID: ${{ secrets.GOOGLEID }}
+        GOOGLESECRET: ${{ secrets.GOOGLESECRET }}
+        GMAIL: ${{ secrets.GMAIL}}
+        PASSWORD: ${{ secrets.PASSWORD}}
+        CLIENTID: ${{ secrets.CLIENTID }}
+        CLIENTSECRET: ${{ secrets.CLIENTSECRET}}
+        REFRESHTOKEN: ${{ secretsREFRESHTOKEN}}
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
