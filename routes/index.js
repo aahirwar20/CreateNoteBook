@@ -200,14 +200,7 @@ router.get("/feedback",function(req,res){
     });
     res.redirect('/note');
      });
-     function check_feed(req,res,next){
-           if(req.session.user.id==1){
-               next();
-           
-       }
-       else{res.redirect('/log-in');}
-    
-    }
+     
     
 router.get("/add_feed",check_feed,function(req,res){
    var t,m,k;
