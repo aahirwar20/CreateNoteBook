@@ -2,7 +2,8 @@ var express=require('express');
 var  router = express.Router();
 require('dotenv').config()
 GOOGLE_CLIENT_ID = process.env.GOOGLEID;                                                 //Write Google Client Id 
-GOOGLE_CLIENT_SECRET = process.env.GOOGLESECRET;                                            //Write Google Client Secret Key 
+GOOGLE_CLIENT_SECRET = process.env.GOOGLESECRET;  
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;                                          //Write Google Client Secret Key 
 var passport = require('passport');
 var {mongoose,sign_up,count}=require('./mongoose');
 var userProfile =[];
@@ -18,10 +19,11 @@ passport.serializeUser(function(user, cb) {
     cb(null, obj);
   });
 
-  const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+  
 
 var b; 
-
+console.log(GOOGLE_CLIENT_ID)
+console.log(GOOGLE_CLIENT_SECRET)
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
