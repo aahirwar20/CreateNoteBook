@@ -1,6 +1,9 @@
 var mongoose= require('mongoose');
 require('dotenv').config()
 mongoose.connect(process.env.MONGODBKEY);
+console.log(process.env.MONGODBKEY);
+console.log(process.env.GOOGLEID);
+console.log(process.env.GMAIL);
 var sign_upschema =mongoose.Schema({
     s_no:Number,
     fname: String,
