@@ -1,11 +1,15 @@
 {
   "name": "creativenotebook",
+  "homepage": "https://aahirwar20.github.io/creativenotebook",
   "version": "1.0.1",
   "private": true,
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "node ./bin/www",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "build":"git add . && git commit -m 'add && git push origin master && npm run restart"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -31,8 +35,8 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0",
     "jest": "^29.3.1",
     "supertest": "^6.3.3"
-
   }
 }
