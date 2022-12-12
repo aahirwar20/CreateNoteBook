@@ -4,12 +4,12 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node ./bin/www",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
     "dev": "nodemon ./bin/www",
-    "build":"git add . && git commit -m 'add && git push origin master && npm run restart"
+    "build": "git add . && git commit -m 'add && git push origin master && npm run restart"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
