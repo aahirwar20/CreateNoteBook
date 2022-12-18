@@ -6,9 +6,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "node ./bin/www",
+    "start": "node ./bin/index.js",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
-    "dev": "nodemon ./bin/www",
+    "dev": "nodemon ./bin/index.js",
     "build": "npm install"
   },
   "dependencies": {
