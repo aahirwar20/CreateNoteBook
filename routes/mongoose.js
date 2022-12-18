@@ -2,7 +2,7 @@ var mongoose= require('mongoose');
 require('dotenv').config()
 mongoose.connect(process.env.MONGODBKEY);
 
-var sign_upschema =mongoose.Schema({
+var sign_upschema =mongoose.Schema({                       //schema for new sign up 
     s_no:Number,
     fname: String,
     lname: String,
@@ -14,17 +14,15 @@ var sign_upschema =mongoose.Schema({
 });
 
 
-var sign_up = mongoose.model("sign_up",sign_upschema);
+var sign_up = mongoose.model("sign_up",sign_upschema);           
 
-var countschema =mongoose.Schema({
+var countschema =mongoose.Schema({                                                    // schema for no of users
     count:Number
-    
-
-});
+    });
 
 var count = mongoose.model("count",countschema);
 
-var formschema =mongoose.Schema({
+var formschema =mongoose.Schema({                                              // schema for one notebook
     s_no:Number,
     name: String,
     data: String,
@@ -33,7 +31,8 @@ var formschema =mongoose.Schema({
 });
 
 var form = mongoose.model("form",formschema);
-var sendschema =mongoose.Schema({
+
+var sendschema =mongoose.Schema({                                               // schema form send notebook from one user to second user
     from:{id:Number,name:String,mail:String},
     to:{id:Number,mail:String},
     name: String,
@@ -41,7 +40,8 @@ var sendschema =mongoose.Schema({
     });
 
 var send = mongoose.model("send",sendschema);
-var feedbackschema =mongoose.Schema({
+
+var feedbackschema =mongoose.Schema({                                           // schema form for feedback
     s_no:Number,
     feed: String
     

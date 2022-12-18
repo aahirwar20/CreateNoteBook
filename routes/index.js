@@ -17,12 +17,12 @@ var  router = express.Router();
 
 
 /* GET home page. */
-function check_sign_in(req,res,next){
+function check_sign_in(req,res,next){                           //function for checking sign in of user 
     if(req.session.user){next();}
     else{res.redirect('/log-in');}
 
 }
-function check_feed(req,res,next){
+function check_feed(req,res,next){                                 //check admin
     if(req.session.user.id==1){
         next();
     
@@ -37,7 +37,8 @@ router.get('/', function(req, res, next) {
     res.render('home.html');
   });
 
-  router.get('/add',check_sign_in,function(req,res){
+
+router.get('/add',check_sign_in,function(req,res){                       //find users  notebooks 
     form.find({s_no:req.session.user.id},function(err,data){
         if(err){throw err;}
         else{
@@ -63,14 +64,14 @@ router.get('/', function(req, res, next) {
             };
             res.send(m);}});});
 
-router.get('/addname',check_sign_in,function(req,res){
+router.get('/addname',check_sign_in,function(req,res){                           //
     var a={s_no:req.session.user.id};
     sign_up.find(a,function(err,data){
         var k={fname:data[0].fname,lname:data[0].lname}
         var t=JSON.stringify(k);
         res.write(t);res.end();})});
 
-router.get('/form',check_sign_in,function(req,res){
+router.get('/form',check_sign_in,function(req,res){                        // req add new notebook
     qu= url.parse(req.url,true).query;
     console.log(qu);
  var formbody= new form({s_no:req.session.user.id,name:qu.name,data:qu.data});
@@ -91,7 +92,7 @@ router.get('/form',check_sign_in,function(req,res){
                form.findByIdAndRemove(i,function(err,dat){if(err){throw err;}else{ }});
                res.send('');}}}});});
 
-router.get('/update',check_sign_in,function(req,res){var i;  
+router.get('/update',check_sign_in,function(req,res){var i;               //req for update notebook
             ur =url.parse(req.url,true).query;
            var no= ur.index;
            var nam =ur.name;
@@ -112,7 +113,7 @@ router.get('/update',check_sign_in,function(req,res){var i;
 
        
 
- router.get("/log-in/login-form?",function(req,res){
+ router.get("/log-in/login-form?",function(req,res){                     //for login form
    qu= url.parse(req.url,true).query;
    var flag =0;
    var a={mail:qu.mail,pass:qu.pass};
@@ -131,7 +132,7 @@ router.get('/update',check_sign_in,function(req,res){var i;
       res.redirect('/note');}});
  });
 
- router.post("/g_check",function(req,res){
+router.post("/g_check",function(req,res){                     //sign up throw google
    qu= url.parse(req.url,true).query;
    var flag =0;
    var a={mail:qu.mail};
@@ -142,7 +143,7 @@ router.get('/update',check_sign_in,function(req,res){var i;
    });
  });
 
- router.get("/log-in/sign-up-form?",function(req,res){
+ router.get("/log-in/sign-up-form?",function(req,res){                           //sign up form
    qu= url.parse(req.url,true).query;
    var flag =0;
    var a={mail:qu.mail};
@@ -188,7 +189,7 @@ var formbody= new sign_up({
 });
 
  
-router.get("/feedback",function(req,res){
+router.get("/feedback",function(req,res){                                     //store new feedback
     var qu=url.parse(req.url,true).query;
     var a=new feedback({
        s_no:req.session.user.id,
@@ -202,7 +203,7 @@ router.get("/feedback",function(req,res){
      });
      
     
-router.get("/add_feed",check_feed,function(req,res){
+router.get("/add_feed",check_feed,function(req,res){                    //take all store feedback
    var t,m,k;
    
    feedback.find({},function(err,data){
@@ -222,7 +223,7 @@ router.get("/add_feed",check_feed,function(req,res){
  
 });
 
-router.get('/add_send',check_sign_in,function(req,res){
+router.get('/add_send',check_sign_in,function(req,res){                                //send notebook to mail
    var qu=url.parse(req.url,true).query;
    let mailDetails={
     from:"ankitahirwarvinod2@gmail.com",
@@ -256,7 +257,7 @@ router.get('/add_send',check_sign_in,function(req,res){
 
   });*/
 });
-router.get('/find_send',check_sign_in,function(req,res){
+router.get('/find_send',check_sign_in,function(req,res){                         //give user sent notebook
     sign_up.find({s_no:req.session.user.id},function(err,sign){
         var k={to:{id:req.session.user.id,mail:sign[0].mail}}
         
@@ -270,6 +271,12 @@ send.find(k,function(err,data){
 
 
 });
+
+
+router.get('/note/:id',check_sign_in,function(req,res){
+    var k=req.params.id
+})
+
 
 
   module.exports =router;

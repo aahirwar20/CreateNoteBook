@@ -23,10 +23,10 @@ else{res.redirect('/log-in');}
 
 
 
-router.get("/log-in",function(req,res){
+router.get("/log-in",function(req,res){                                   //log-in page 
       res.render('log-in.html');                    });
                         
-router.get('/note',check_sign_in,function(req,res){
+router.get('/note',check_sign_in,function(req,res){                       //send main user page
     var a=req.session.user.id;
     if(a==1){
        res.render('admin.html');
@@ -34,8 +34,8 @@ router.get('/note',check_sign_in,function(req,res){
     else{
      res.render('start.html');}
 });
-
-router.get("/log-in/sign-up",function(req,res){
+ 
+router.get("/log-in/sign-up",function(req,res){                      //sign up pages
    res.render('sign-up.html');
   });
  
@@ -47,7 +47,7 @@ router.get("/log-in/sign-up",function(req,res){
   
   
   });
- router.get("/feed_check",check_feed,function(req,res){
+ router.get("/feed_check",check_feed,function(req,res){                      //feed back page
     res.render('feedback.html');
  });
 
