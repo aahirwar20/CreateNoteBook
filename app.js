@@ -14,7 +14,12 @@ var addrouter=require('./routes/add');
 var googlerouter=require('./routes/google');
 var http=require('http').Server(app);
 var passport = require('passport');
+var mongoose= require('mongoose');
 
+require('dotenv').config()
+//const MongoStore = require('connect-mongo')(session);
+
+//mongo={ mongoUrl: process.env.MONGODBKEY };
 // view engine setup
 app.use(logger('dev'));
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +27,9 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use('/static',express.static('public'));
 app.use(cookieParser());
-app.use(session({secret: "Your secret key"}));
+app.use(session({secret: "Your secret key",
+resave: true,
+saveUninitialized: true}));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(upload.array());
