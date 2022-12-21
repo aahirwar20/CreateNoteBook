@@ -1,6 +1,10 @@
 var mongoose= require('mongoose');
-require('dotenv').config()
+//const { route } = require('.');
+require('dotenv').config();
+//const MongoStore = require('connect-mongo');
+
 mongoose.connect(process.env.MONGODBKEY);
+
 
 var sign_upschema =mongoose.Schema({                       //schema for new sign up 
     s_no:Number,

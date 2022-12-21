@@ -17,7 +17,7 @@ var passport = require('passport');
 var mongoose= require('mongoose');
 
 require('dotenv').config()
-//const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 
 //mongo={ mongoUrl: process.env.MONGODBKEY };
 // view engine setup
@@ -29,7 +29,10 @@ app.use('/static',express.static('public'));
 app.use(cookieParser());
 app.use(session({secret: "Your secret key",
 resave: true,
-saveUninitialized: true}));
+saveUninitialized: true,
+store:  new  MongoStore({mongooseConnection: mongoose.connection,
+  collection: 'session',})}));
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(upload.array());
