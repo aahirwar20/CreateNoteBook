@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3450');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 var server = http.createServer(app);
 var io=require('socket.io')(server);
