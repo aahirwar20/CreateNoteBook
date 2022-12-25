@@ -2,7 +2,7 @@ var mongoose= require('mongoose');
 //const { route } = require('.');
 require('dotenv').config();
 //const MongoStore = require('connect-mongo');
-
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGODBKEY);
 
 
