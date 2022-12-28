@@ -2,38 +2,94 @@
     <head>
         <link rel="icon" type="image/png" href="/static/image/note7.png" sizes="32x32" />
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/static/stylesheet/sign-up.css">
+
         <meta name="google-signin-client_id" content="367127692858-5kihamh7pif51597uvclh37746vhjbdb.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="/static/javascript/sign-up.js"></script>
         
         <title>Creative Notebook</title>
-    </head>
-    <body>
-        <p class="intro">sign-up</p>
-        <div id="sign-up">
-           
-            
-            <div class="signupbox">
-                <form action="/log-in/sign-up-form" method="get">
-                    
-                    <label for="fname"></label>
-                    <input class="name"  id="fname" name ="fname" placeholder="name"><br>
-                    <label for="lname"></label>
-                    <input class="name"   id="lname" name ="lname" placeholder="last-name"><br>
-                    <label for="mbl">mobile No</label>
-                    <input class="signup-mbl" id="mbl" name ="mbl" pattern="{10}" placeholder="xxxxxxxxxx"><br>
-                    <label for="pin">Pincode</label>
-                    <input class="signup-pin" id="pin" name ="pin" pattern="[0,9]{4,6}" type="number" placeholder="XXXXXX"><br>
-                    <label for="mail">gmail</label>
-                    <input class="signup-gmail" onpointerleave="g_check()" id="mail" name ="mail" type="email" placeholder="@gmail.com"><br>
-                    <label for="pass">password</label>
-                    <input class="signup-pass" id="pass" name ="pass" title="more than 7character" pattern="{7,30}"type="password" placeholder="password">
-                    <p id="ins"></p>
-                    <button class="sign-up-submit" type="submit" >
-                    sign-up
-                    </button>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+               <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
         
-                </form></div> </div>
-    </body>
+        <!-- Popper JS -->
+              <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body style="text-align: center;background-color: #dee2e4;">
+        <nav class="navbar navbar-expand-sm bg-light">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item" style="margin-left: 20px;">
+                <a href="/" class="btn btn-info bg-dark" role="button">Home</a>
+              </li>
+              <li class="nav-item"  style="margin-left: 20px;">
+                <a href="/log-in" class="btn btn-info bg-dark" role="button">Log In</a>
+              </li>
+              <li class="nav-item"  style="margin-left: 20px;">
+                <a href="/log-in" class="btn btn-info bg-dark" role="button">About</a>
+              </li>
+             
+            </ul> </nav>
+
+            
+        <p class="intro">Sign Up</p>
+        <div class="container-fluid" >
+        
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+           
+                    <div id="sign-up">
+                 <div class="signupbox">
+
+                  <form action="/log-in/sign-up-form" method="get">
+                    <div class="form-group">
+                    <label for="fname"></label>
+                    <input class="form-control"  id="fname" name ="fname" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="fname"></label>
+                    <label for="lname"></label>
+                    <input class="form-control"    id="lname" name ="lname" placeholder="last-name">
+                    </div>
+                    <div class="form-group">
+                    <label for="mbl">mobile No</label>
+                  
+                    <input class="form-control" id="mbl" name ="mbl" pattern="{10}" placeholder="xxxxxxxxxx"></div>
+
+                    <div class="form-group">
+                    <label for="pin">Pincode</label>
+                    <input class="form-control"  id="pin" name ="pin" pattern="[0,9]{4,6}" type="number" placeholder="XXXXXX">
+                    </div>
+                    <div class="form-group">
+                    <label for="mail">gmail</label>
+                    <input class="form-control"  onpointerleave="g_check()" id="mail" name ="mail" type="email" placeholder="@gmail.com">
+                    </div>
+                    <div class="form-group">
+                    <label for="pass">password</label>
+                    <input class="form-control"  id="pass" name ="pass" title="more than 7character" pattern="{7,30}"type="password" placeholder="password">
+                    </div>
+
+                    <p id="ins"></p>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox"> Remember me
+                        </label>
+                      </div>
+                    <button class="sign-up-submit" type="submit" >sign-up </button>
+               
+                </form></div></div>
+
+            </div>
+            <div class="col-md-4"></div>            
+          </div>  
+       </div>
+                </body>
 </html>

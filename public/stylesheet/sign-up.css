@@ -17,7 +17,7 @@ input:invalid{
     border-radius: 10px;
 
 }
-.log-gmail{
+/* .log-gmail{
     position: absolute;
     border-color: black;
     border-radius: 5px;
@@ -49,8 +49,8 @@ input:invalid{
     left: 50px;
     background-color: rgb(211, 247, 191);  
     margin-bottom: 10px;
-}
-#mbl{
+} */
+/* #mbl{
     position: relative;
     border-color: black;
     border-radius: 5px;
@@ -97,8 +97,8 @@ input:invalid{
     align-items: center;
     background-color: rgb(211, 247, 191);  
     margin-bottom: 10px;
-}
-lable{
+} */
+/* lable{
     position: relative;
     border-color: black;
     border-radius: 5px;
@@ -108,7 +108,7 @@ lable{
     left: 0px;
       
     margin-bottom: 10px;
-}
+} */
 .log-submit{
     position: absolute;
     border-color: rgb(110, 110, 110);
@@ -121,8 +121,9 @@ lable{
 }
 .intro{
     position: relative;
-    font-size: 100px;
+    font-size: 30px;
     left: -45px;
+    font-weight: bold;
     box-shadow: 20px;
 }
 .sign-up-call{
@@ -135,10 +136,9 @@ lable{
     background-color: rgba(248, 249, 250, 1);
     box-shadow: 1px 1px 10px rgb(119, 119, 119);
     position: absolute;
-    top: 140px;
-    left: 500px;
+    
    padding: 10px;
-    height: 250px;
+    height: 600px;
     width: 400px;
     border-radius: 10px;
 }
@@ -152,7 +152,7 @@ lable{
     left: 160px;
     background-color: rgb(154, 225, 247);
 }
-#fname{
+/* #fname{
     position: absolute;
 width: 140px;
 top:10px;
@@ -165,4 +165,4 @@ background-color: rgb(211, 247, 191);
     top:10px;
     right:60px;
     background-color: rgb(211, 247, 191);
-}
+} */

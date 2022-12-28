@@ -3,7 +3,7 @@ body{
     background: #ffffff;
  overflow-x: hidden;
  padding-left: 0px;
- top: 33px;
+ 
 }
 .active{
     position: fixed;
@@ -79,7 +79,7 @@ body{
     background-color: #c654f3;
 }
 
-.row{
+/* .row{
     position: relative;
     background-color: rgb(233, 252, 252);
      width: 1000px;
@@ -91,7 +91,7 @@ body{
      overflow-y: auto;
      overflow-x:hidden;
     
-}
+} */
 .row-name{  
     position:absolute  ;
  border-width: 0px    ;
@@ -107,7 +107,7 @@ left: 20px;
 cursor: grab;
 padding-left: 30px;
 }
-.row-data{
+/* .row-data{
     position: absolute;
     border-width: 0px    ;
     border-radius: 10px;
@@ -120,7 +120,7 @@ padding-left: 30px;
     top:15px;
     left: 260px;
     overflow: hidden;
-   }
+   } */
 .Trow{
     position: relative;
     background-color: rgb(179, 181, 182);
@@ -146,7 +146,7 @@ padding-left: 30px;
 top: -20px;
 left: 15px;
 }
-.Trow-data{
+/* .Trow-data{
     position: absolute;
     border-width: 10px    ;
     border-radius: 10px;
@@ -159,7 +159,7 @@ left: 15px;
     width: 725px;
     top:-20px;
     left: 260px;
-   }
+   } */
 
  .toolbar{
      padding: 0px;
@@ -208,16 +208,16 @@ left: 15px;
      position: absolute;
      right: 200px;
      top:0px;
-     color: #f9f3fa;
+     color: #171717;
  }
- img{
+ /* img{
      position: relative;
      height: 400px;
      width: 800px;
      z-index: -1;
      top: 0px;
- }
- .data-border{
+ } */
+ /* .data-border{
     position: relative;
      visibility: visible;
      height: 320px;
@@ -230,15 +230,13 @@ left: 15px;
      background-color: rgb(211, 209, 209);
     overflow-x: hidden;
      top: 20px;
- }
+ } */
  .feature{
      visibility: visible;
      position: relative;
-     height: 250px;
+     min-height: 250px;
      width: auto;
-    top: 0px;
-    left: 0px;
-    padding-left: 0px;
+     padding-left: 0px;
      background:linear-gradient(to right bottom, #9154f3 0%, #fdacfd 100%);
      border-radius: 10px;
      overflow: hidden;
@@ -252,7 +250,7 @@ left: 15px;
  .material-icons
 
 
-.ball{
+/* .ball{
        position: absolute;
       
        background :radial-gradient(red,rgb(109, 31, 37));
@@ -274,9 +272,9 @@ left: 15px;
 }
 @keyframes y {
     to{bottom: -0px;}
-}
+} */
 
- .last-feed{
+ /* .last-feed{
     visibility: visible;
     position: relative;
     height: 250px;
@@ -287,7 +285,7 @@ left: 15px;
     border-radius: 10px;
     top: 40px;
     
- }
+ } */
  .add{
     position: relative;
     background-color: rgb(48, 100, 105);
@@ -354,19 +352,19 @@ left: 15px;
      height: 30px;
      width: 30px;
  }
- .row-data-ex{
+ /* .row-data-ex{
     position: absolute;
     padding-left: 10px;
     padding-right: 70px;
     top:20px;
     left:0px;
 
-}
-.row-name-ex{
+} */
+/* .row-name-ex{
     padding-left: 350px;
     font-weight: 600;
 
-}
+} */
 .other-p{
     position: relative;
     background-color: white;
@@ -424,6 +422,7 @@ left: 15px;
      overflow-x: hidden;
      
 }
+
 #myCanvas{
     position: relative;
     left: 100px;
@@ -477,7 +476,7 @@ left: 15px;
     display: inline-block;
 }
 .box{
-    display: inline-block;
+    /* display: block; */
     position: relative;
     width: 300px;
     height: 300px;
@@ -487,9 +486,10 @@ left: 15px;
     text-align: center;
     background-color: rgba(248, 249, 250, 0.3);
     box-shadow: 1px 1px 10px rgb(119, 119, 119);
-    margin-left: 50px;
-    margin-bottom: 50px;
-    animation: box_ant 1s linear backwards;
+    margin: auto;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    /* animation: box_ant 1s linear backwards; */
 }
 @keyframes box_ant {
     10% {transform:rotate(-30deg);
@@ -552,7 +552,7 @@ top: 40px;
    left: 5px;
    top: 10px;
 }
-#ubox::before{
+/* #ubox::before{
     content:'';
     position: absolute;
     height: 30px;
@@ -563,13 +563,13 @@ top: 40px;
    top:9px
 
 
-}
+} */
 .social{
     position: absolute;
     width: 300px;
     height: 200px;
     right: 0px;
-    top:0px;
+    
     background-color: rgb(249, 249, 250,0.0);
     
 }

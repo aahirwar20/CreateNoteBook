@@ -17,11 +17,7 @@ $(document).ready(function(){
         $(".other").css({"z-index": "-1"}) 
       });
       
-      $(".row").mouseenter(function(){
-        $(this).css({"height":"77px","width":"1004px","left":"-2px","top":"-1px","background-color": "rgb(220, 241, 248)"})
-        
-       } );
-
+   
        $(".toolicon").click(function(){
         setInterval(() => {
           location.reload();
