@@ -30,18 +30,29 @@ app.controller('myCtrl',function($scope,$http,$q){
 
 
     $scope.usubmit=function(id){
-        var u ='/update?index='+id+'&name='+$scope.uname+'&data='+$scope.udata;   
+        var u ='/update?index='+id+'&name='+$scope.uname+'&data='+$scope.udata; 
+        //console.log(u);  
         $http.get(u,{'cache': false}).then(function(response){
             setTimeout(() => {window.location.reload();},100);
         });
     }
      
      $scope.delete=function(id){
-         var del ='/delete?index='+id;
+         var del ='/note/delete?index='+id;
+        // console.log(del);  
          $http.get(del,{'cache': false}).then(function(response){
-             setTimeout(() => {window.location.reload();},100);
+            console.log(response.URL);  
+            setTimeout(() => {window.location.assign("/note");},100);
          });
      }
+
+     $scope.update =function(id){
+        $scope.uname=$scope.k[id].name;
+        $scope.udata=$scope.k[id].data;
+        $scope.uid=id;
+        if($scope.ushow==true){$scope.ushow=false}
+        else{$scope.ushow=true}
+        } 
    
     let params = (new URL(document.location)).searchParams;
     let id = params.get("id");
@@ -61,13 +72,7 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.k=response[1].data.note;
         $scope.sends=response[2].data.send;
         
-        $scope.update =function(id){
-            $scope.uname=$scope.k[id].name;
-            $scope.udata=$scope.k[id].data;
-            $scope.uid=id;
-            if($scope.ushow==true){$scope.ushow=false}
-            else{$scope.ushow=true}
-            } 
+      
        
         var l=$scope.k.length;
         var i;
@@ -80,17 +85,17 @@ app.controller('myCtrl',function($scope,$http,$q){
         $scope.mail.push('');
     }
      
-    var socket=io();
+    // var socket=io();
     var name=$scope.firstname +' '+$scope.lastname;
-    socket.emit('name',name);
-    socket.on('users',function(users){
-        document.querySelector('.active').innerHTML=''
-        for(x of users){
-          document.querySelector('.active').innerHTML+='<div class="users" ><div class="a_ball"></div>'+x+'</div>'   
-         }
+    // socket.emit('name',name);
+    // socket.on('users',function(users){
+    //     document.querySelector('.active').innerHTML=''
+    //     for(x of users){
+    //       document.querySelector('.active').innerHTML+='<div class="users" ><div class="a_ball"></div>'+x+'</div>'   
+    //      }
      
         
-     });
+    //  });
     });
 });
 

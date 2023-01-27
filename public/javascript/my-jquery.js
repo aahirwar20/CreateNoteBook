@@ -31,17 +31,32 @@ $(document).ready(function(){
       $(".toolicon").mouseleave(function(){
         $(".toolicon").css({"color": "rgb(254, 254, 255)","background-color": "rgb(19, 19, 20)" }) 
       });
-      
+      var count = 0;  
     $(".active_bar").click(function(){
-      $(".active").css({"display":"inline"})
+      count++;
+      //even odd click detect 
+      var isEven = function(someNumber) {
+          return (someNumber % 2 === 0) ? true : false;
+      };
+      // on odd clicks do this
+      if (isEven(count) === false) {
+        $(".active").css({"display":"inline"})
+      }
+      // on even clicks do this
+      else if (isEven(count) === true) {
+       
+        $(".active").css({"display":"none"})
+      }
+     
     });
-    $(".active").mouseleave(function(){
-      $(".active").css({"display":"none"})
-    });
+
+    // $(".active").mouseleave(function(){
+    //   $(".active").css({"display":"none"})
+    // });
      
     
     },function(){
-      $(".active").css({"display":"none"})
+      // $(".active").css({"display":"none"})
     });
    
     function show_feed(){

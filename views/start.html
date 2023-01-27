@@ -50,18 +50,22 @@
 
       
     
-    <div class="container-fluid">
+   
 
-      <div class="feature">
-        <div class="row">
-           <div class="col-md-6">
-               <img style=" position :relative;left: 0px; top:0px; z-index: 0; height: 250px ;width: 350px;" src="/static/image/note4.png" alt="Girl in a jacket" width="200" height="200" >
+      
+        <div class="container-fluid" style="background-image:url(/static/image/top3.png); inherits: no; background-repeat: no-repeat; background-size: cover; min-height: 340px;">
+          <div class="row">
+           <!-- <div class="col-md-6">
+               <img style=" position :relative; top:0px; z-index: 0; height:500px ;width:500px ;" src="/static/image/UI2.png" alt="Girl in a jacket" width="400" height="400" >
             </div>
             <div class="col-md-6">
-               <img style=" position :relative;right: 0px; top:0px; z-index: 0; height: 350px ;width: 300px;" src="/static/image/tree.png" alt="Girl in a jacket" width="200" height="200" >
-          </div></div></div>
-         </div>
-
+               <img style=" position :relative;right: 0px; top:0px; z-index: 0;" src="/static/image/rectangle.png" alt="Girl in a jacket" width="400" height="400" >
+               <img style=" position :absolute;right: 250px; top:250px; z-index: 0; height: 40px ;width: 40px;" src="/static/image/circle.png" alt="Girl in a jacket" width="40" height="40" >
+            
+               <img style=" position :absolute;right: -70px; top:-90px; z-index: 0; height: 200px ;width: 200px;" src="/static/image/circle.png" alt="Girl in a jacket" width="100" height="100" >
+            </div> -->
+              </div></div>
+        
 
     <div class="container-fluid" style="min-height: 1000px;">
         <div class="row" style="min-height: 300px; margin-top: 30px; margin-bottom: 30px;">
@@ -98,7 +102,12 @@
     <div class="row">
      <div class="col-md-4"  ng-repeat="x in k" >
           <div class='box' >
-              <h2>{{x.name}}</h2>  
+            <div class="ss" style="position: absolute; right: 20px;top: 15px;"> 
+               <span class="material-icons" id="expend"  ng-click="Expend(x.id)" >fullscreen</span>
+            </div>
+              <h2>{{x.name}}</h2> 
+              
+              
                 <ul> <span class="material-icons" id="box_other" ng-click="show3(x.id)" >view_headline</span>
                <ul class="sub_menu" ng-show="showme[x.id]">
                <ul><button class="c-button1" ng-click="update(x.id)" >Update</button></ul>
@@ -106,7 +115,7 @@
                <ul><button class="c-button1" ng-click="show4(x.id)" >Send</button>
                <ul class="sub_menu2" ng-show="show_send[x.id]" style="position:absolute;left: -10px;bottom:30px">
                <input id="add_mail"type="email" placeholder="gmail.com" name="to_mail"ng-model="mail[x.id]"> 
-               <button type="submit" style="background-color: rgb(217, 43, 226);"class="c_button1" ng-click="send(x.id)">Send</button>
+               <button type="submit" style="background-color: #689BFE;"class="c_button1" ng-click="send(x.id)">Send</button>
                </ul>
                </ul>
                </ul> 
@@ -156,7 +165,7 @@
     </form>
    </div>
    <div class="col-md-6">
-    <h3>social contact</h3>
+    <h3 style="color: aliceblue;">social contact</h3>
   
     <a href="https://www.facebook.com/profile.php?id=100053066719832"><i class="fa fa-facebook fa-fw"></i></a>
     <a href="https://www.instagram.com/invites/contact/?i=jcoy1rsl41es&utm_content=3q9bsmw"><i class="fa fa-instagram fa-fw"></i></a>

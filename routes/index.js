@@ -78,7 +78,7 @@ router.get('/form',check_sign_in,function(req,res){                        // re
  formbody.save(function(err,form){if(err){throw err;}});
  res.redirect('/note');});
 
- app.get('/delete',check_sign_in,function(req,res){var i;  
+router.get('/delete',check_sign_in,function(req,res){var i;  
     ur =url.parse(req.url,true).query;
    
    var no= ur.index;
@@ -273,10 +273,50 @@ send.find(k,function(err,data){
 });
 
 
-router.get('/note/:id',check_sign_in,function(req,res){
-    var k=req.params.id
+router.get('/note/page/:id',check_sign_in,function(req,res){
+    //console.log("hello")
+    var note_id=req.params.id
+
+    form.find({s_no:req.session.user.id},function(err,data){
+        if(err){throw err;}
+        else{ 
+            var struct={
+                id:Number,
+                name:String,
+                data:String
+            }
+            
+            for(i in data){
+               
+                if(i===note_id){ 
+                struct={
+                    id:i,
+                    name:data[i].name,
+                    data:data[i].data
+                }
+                res.render('Notepage.ejs',{note:struct})   
+            }
+              
+            }
+           }});
+   
 })
 
-
+router.get('/note/delete',check_sign_in,function(req,res){var i;  
+    ur =url.parse(req.url,true).query;
+   
+   var no= ur.index;
+   
+   form.find({s_no:req.session.user.id},function(err,data){
+        if(err){ throw err;}
+       else{ var j;
+           for(j in data){if(j==no){
+               console.log("here");
+               var i=data[j].id; 
+               form.findByIdAndRemove(i,function(err,dat){if(err){throw err;}else{ console.log("here2");}});
+               res.send('note')}}
+             
+            }});
+        });
 
   module.exports =router;
