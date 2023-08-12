@@ -1,69 +1,85 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var app = express();
-var bodyparser=require('body-parser');
-var multer =require('multer');
-var upload= multer();
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var indexrouter=require('./routes/index');
-var addrouter=require('./routes/add');
-var googlerouter=require('./routes/google');
-var http=require('http').Server(app);
-var passport = require('passport');
-var mongoose= require('mongoose');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import session from 'express-session';
+import multer from 'multer';
+import mongoose from 'mongoose';
+import { renderFile } from 'ejs';
 
-require('dotenv').config()
-const MongoStore = require('connect-mongo')(session);
+import userRouter from './routes/user.js';
+import pageRouter from './routes/page.js';
+import noteRouter from './routes/note.js';
+import profileRouter from './routes/profile.js';
+import feedbackRouter from './routes/feedback.js';
 
-//mongo={ mongoUrl: process.env.MONGODBKEY };
-// view engine setup
+const app = express();
+import bodyParser from 'body-parser';
+
+import 'dotenv/config';
+import connectMongo from 'connect-mongo';
+
+const MongoStore = connectMongo(session);
+import { connectMongoDb } from './utils/mongo.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const upload = multer();
+
 app.use(logger('dev'));
 app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
+app.engine('html', renderFile);
 app.set('view engine', 'ejs');
 app.use('/static',express.static('public'));
 app.use(cookieParser());
-app.use(session({secret: "Your secret key",
-resave: true,
-saveUninitialized: true,
-store:  new  MongoStore({mongooseConnection: mongoose.connection,
-  collection: 'session',})}));
-
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(session({
+    secret: "Your secret key",
+    resave: true,
+    saveUninitialized: true,
+    store:  new  MongoStore({
+        mongooseConnection: mongoose.connection,
+        collection: 'session',
+    })
+}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 
+(async () => {
+    await connectMongoDb(process.env.MONGODBKEY);
+})();
 
-  app.use('/',googlerouter);
-  app.use('/',indexrouter);
-  app.use('/',addrouter);
-  
-
-  app.use('/note',function(req,res,next){
-    res.redirect('/log-in');
+// Health check route
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
 });
 
+app.use('/', pageRouter);
+app.use('/user', userRouter);
+app.use('/note', noteRouter);
+app.use('/profile', profileRouter)
+app.use('/feedback', feedbackRouter)
 
-
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use('/dashboard', function(req, res, next) {
+    res.redirect('/login');
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use((req, res, next) => {
+    setImmediate(() => {
+      next(new Error('Something went wrong'));
+    });
+  });
 
-  // render the error page
-  res.status(err.status || 500);
-  
+
+app.use(function (err, req, res, next) {
+    console.error(err.message);
+    if (!err.statusCode) err.statusCode = 500;
+    res.status(err.statusCode).json({
+        success: false,
+        message: err.message
+    });
 });
 
-module.exports = app;
+export default app;

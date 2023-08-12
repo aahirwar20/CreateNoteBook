@@ -1,7 +1,6 @@
 var users=[];
 
-module.exports ={
-    start:(io) =>{
+export async function initSocket(io){
         io.on('connection',function(socket){
             var a=0;
            
@@ -18,6 +17,6 @@ module.exports ={
            });
           });
           return io;
-    } }
+}
 
 

@@ -22,43 +22,23 @@ body {
     margin-bottom: 30px;
 }
 
-/* Sign Up Box Styles */
-.signupbox {
+/* About Content Styles */
+.about-content {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-/* Input Field Styles */
-.form-control {
-    margin-bottom: 10px;
+.about-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-/* Sign Up Button Styles */
-.sign-up-submit {
-    background-color: #343a40;
-    color: white;
-    border: none;
-    border-radius: 4px;
-}
-
-.sign-up-submit:hover {
-    background-color: #1d2124;
-}
-
-/* Intro Text Styles */
-.intro {
-    font-size: xx-large;
-    font-style: normal;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-/* Checkbox Styles */
-.form-check-label {
-    font-weight: normal;
+.about-content p {
+    margin-bottom: 15px;
 }
 
 /* Center Content */

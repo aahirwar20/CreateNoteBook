@@ -1,146 +1,110 @@
-<html lang="en" id="home">
-    <head>
-      <link rel="icon" type="image/png" href="/static/image/note7.png" sizes="32x32" />
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Creative Notebook</title>
-     
-      <link rel="stylesheet" href="/static/stylesheet/startcss.css">
-      <script src="/socket.io/socket.io.js"></script>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="/static/javascript/my-jquery.js"></script>
-      <script src="/static/javascript/angular.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-     
-      <!-- Popper JS -->
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-      
-      <!-- Latest compiled JavaScript -->
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-
- <body  ng-app="myapp" ng-controller="myCtrl">
-      <!-- Top Navigation Bar -->
-      <nav class="navbar navbar-expand-sm bg-light">
-
-        <!-- Links -->
-        <ul class="navbar-nav">
-          <li class="nav-item" style="margin-left: 20px;">
-            <a href="/" class="btn btn-info bg-dark" role="button">Home</a>
-          </li>
-          <li class="nav-item"  style="margin-left: 20px;">
-            <a href="/Sign Up" class="btn btn-info bg-dark" role="button">Sign Up</a>
-          </li>
-          <li class="nav-item"  style="margin-left: 20px;">
-            <a href="/log-in" class="btn btn-info bg-dark" role="button">About</a>
-          </li>
-         
-        <li class="nav-item"  style="margin-left: 20px;">
-          <a href="/log-out" class="btn btn-info bg-dark" role="button">Log Out ></a>
-        </li>
-
-        <liclass="nav-item"  style="margin-left: 20px;">
-          <p class="">Hello  {{firstname+" "+lastname}}</p>
-        </li>
-        </ul> </nav>
-
-      
+<!DOCTYPE html>
+<html lang="en" id="home"  ng-app="myapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Notebook</title>
     
-   
+    <link rel="icon" type="image/png" href="/static/image/note7.png" sizes="32x32">
+    <link rel="stylesheet" href="/static/stylesheet/startcss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/javascript/my-jquery.js"></script>
+    <script src="/static/javascript/angular.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+ <body ng-controller="myCtrl">
+  <nav class="navbar navbar-expand-sm bg-light">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item" style="margin-left: 20px;">
+        <a href="/" class="btn btn-info bg-dark" role="button">Home</a>
+      </li>
+      <li class="nav-item" style="margin-left: 20px;">
+        <a href="/SignUp" class="btn btn-info bg-dark" role="button">Sign Up</a>
+      </li>
+      <li class="nav-item" style="margin-left: 20px;">
+        <a href="/about" class="btn btn-info bg-dark" role="button">About</a>
+      </li>
+      <li class="nav-item" style="margin-left: 20px;">
+        <a href="/user/logout" class="btn btn-info bg-dark" role="button">Log Out ></a>
+      </li>
+      <li class="nav-item" style="margin-left: 20px;">
+        <p class="">Hello {{firstname + " " + lastname}}</p>
+      </li>
+    </ul>
+  </nav>
+
 
       
-        <div class="container-fluid" style="background-image:url(/static/image/top3.png); inherits: no; background-repeat: no-repeat; background-size: cover; min-height: 340px;">
-          <div class="row">
-           <!-- <div class="col-md-6">
-               <img style=" position :relative; top:0px; z-index: 0; height:500px ;width:500px ;" src="/static/image/UI2.png" alt="Girl in a jacket" width="400" height="400" >
-            </div>
-            <div class="col-md-6">
-               <img style=" position :relative;right: 0px; top:0px; z-index: 0;" src="/static/image/rectangle.png" alt="Girl in a jacket" width="400" height="400" >
-               <img style=" position :absolute;right: 250px; top:250px; z-index: 0; height: 40px ;width: 40px;" src="/static/image/circle.png" alt="Girl in a jacket" width="40" height="40" >
-            
-               <img style=" position :absolute;right: -70px; top:-90px; z-index: 0; height: 200px ;width: 200px;" src="/static/image/circle.png" alt="Girl in a jacket" width="100" height="100" >
-            </div> -->
-              </div></div>
+        <div class="container-fluid" style="background-image:url(/static/image/top3.png); inherits: no; background-repeat: no-repeat; background-size: cover; min-height: 340px;"></div>
         
 
     <div class="container-fluid" style="min-height: 1000px;">
-        <div class="row" style="min-height: 300px; margin-top: 30px; margin-bottom: 30px;">
-          <div class="col-md-4">
-          <div class="box"  >
-           <span class="material-icons" id="add-one" >note_add</span>
-              <form action="/form" method="get">
-               <input class="add-name" id="fn" name="name" placeholder="Name">
-               <textarea class="add-data" id="fd" name="data" value="good" placeholder="Enter the data....."></textarea>
-               <button class="add-send" type="submit" >
-                 <i class="material-icons">send</i>
-                 </button>
-             </form>
-             <div class="down-line">
-                   <p class="design-circle"></p> </div>
-             </div>   
-        </div>
-
-      <div class="col-md-4">
-       <div class="box" ng-show="ushow" id="ubox" >
-              <span class="material-icons" id="add-one" >note_add</span>
-               <input class="add-name" id="fn" name="name" placeholder="Update Name" ng-model="uname">
-               <textarea class="add-data" id="fd" name="data" value="good" placeholder="Update data....." ng-model="udata"></textarea>
-               <button class="add-send" type="submit" ng-click="usubmit(uid)">
-                   <i class="material-icons">send</i>
-                 </button>
-             <div class="down-line">
-            <p class="design-circle"></p> </div>
-      </div>
-      </div>
-      </div>
-
-
-    <div class="row">
-     <div class="col-md-4"  ng-repeat="x in k" >
-          <div class='box' >
-            <div class="ss" style="position: absolute; right: 20px;top: 15px;"> 
-               <span class="material-icons" id="expend"  ng-click="Expend(x.id)" >fullscreen</span>
+      <div class="row" style="min-height: 300px; margin-top: 30px; margin-bottom: 30px;">
+        <div class="col-md-4">
+            <div class="box">
+                <span class="material-icons icon-large" id="add-one">add_circle</span>
+                <form action="/note" method="post">
+                    <input class="add-name" id="fn" name="name" placeholder="Name">
+                    <textarea class="add-data" id="fd" name="data" value="good" placeholder="Enter the data..."></textarea>
+                    <button class="add-send" type="submit">
+                        <span class="material-icons">send</span>
+                    </button>
+                </form>
             </div>
-              <h2>{{x.name}}</h2> 
-              
-              
-                <ul> <span class="material-icons" id="box_other" ng-click="show3(x.id)" >view_headline</span>
-               <ul class="sub_menu" ng-show="showme[x.id]">
-               <ul><button class="c-button1" ng-click="update(x.id)" >Update</button></ul>
-               <ul><button class="c-button1" ng-click="delete(x.id)" >Delete</button></ul>
-               <ul><button class="c-button1" ng-click="show4(x.id)" >Send</button>
-               <ul class="sub_menu2" ng-show="show_send[x.id]" style="position:absolute;left: -10px;bottom:30px">
-               <input id="add_mail"type="email" placeholder="gmail.com" name="to_mail"ng-model="mail[x.id]"> 
-               <button type="submit" style="background-color: #689BFE;"class="c_button1" ng-click="send(x.id)">Send</button>
-               </ul>
-               </ul>
-               </ul> 
-               </ul>
-               <p>{{x.data}}</p> 
-            <div class="down-line">
-            <p class="design-circle"></p> </div>
-           </div>
-          </div>
         </div>
+    
+        <div class="col-md-4">
+            <div class="box" ng-show="ushow" id="ubox">
+                <span class="material-icons icon-large" id="add-one">add_circle</span>
+                <input class="add-name" id="fn" name="name" placeholder="Update Name" ng-model="uname">
+                <textarea class="add-data" id="fd" name="data" value="good" placeholder="Update data..." ng-model="udata"></textarea>
+                <button class="add-send" type="submit" ng-click="usubmit(uid)">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4" ng-repeat="note in notes">
+            <div class="box">
+                <div class="ss">
+                    <span class="material-icons icon-large" id="expand" ng-click="Expend($index)">open_in_full</span>
+                </div>
+                <h2>{{ note.name }}</h2>
 
-
-
-     <div class="row">
-              <div  ng-repeat="x in sends" >
-              <div class='box'>
-                      <h3>{{x.from.name}}</h3>
-                      <h2>{{x.name}}</h2>  
-                      <p>{{x.data}}</p> 
-                   <div class="down-line">
-                      <p class="design-circle"></p> </div>
-                   </div>
-                 </div>
-              </div>
-           </div>
+                  <span class="material-icons icon-small" id="box_other" ng-click="show3($index)">view_headline</span>
+                  <ul class="sub_menu" ng-show="showme[$index]">
+                      <li><button class="c-button1" ng-click="update($index)">Update</button></li>
+                      <li><button class="c-button1" ng-click="delete(note.noteId)">Delete</button></li>
+                      <li>
+                          <button class="c-button1" ng-click="show4($index)">Send</button>
+                          <ul class="sub_menu2" ng-show="show_send[$index]">
+                              <li>
+                                  <input type="email" placeholder="gmail.com" name="to_mail" ng-model="mail[$index]">
+                                  <button class="c-button1" ng-click="send($index, note.name, note.data)">Send</button>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+              
+                
+                <p>{{ note.data }}</p>
+            </div>
+          </div>
+  </div>
   
     <div class="active_bar">online</div>
     <div class="active"></div>
@@ -150,29 +114,39 @@
 
 
 
-<footer >
-  <div class="container-fluid">
-    <div class="row bg-dark" style="min-height: 300px;">
-      <div class="col-md-6">
-        <button class="c-button1" onclick="show_feed()">feedback</button>
-
-        <form class="feedback"style="display: none;" method="get" action="/feedback">
-          <label for="feed"></label>
-          
-        <textarea type="input" id="feed" class="feed_input" name="feedback" placeholder="Write feedback"></textarea>
-        <button class="feed_submit" type="submit">submit</button>
-        
-    </form>
-   </div>
-   <div class="col-md-6">
-    <h3 style="color: aliceblue;">social contact</h3>
-  
-    <a href="https://www.facebook.com/profile.php?id=100053066719832"><i class="fa fa-facebook fa-fw"></i></a>
-    <a href="https://www.instagram.com/invites/contact/?i=jcoy1rsl41es&utm_content=3q9bsmw"><i class="fa fa-instagram fa-fw"></i></a>
-    <a href="https://www.linkedin.com/in/ankit-ahirwar-2006661b3"><i class="fa fa-linkedin fa-fw"></i></a>
-    <a href=""><i class="fa fa-twitter fa-fw"></i></a>
-   </div></div>
-   </div>
+<footer class="container-fluid bg-dark">
+  <div class="row" style="min-height: 300px;">
+      <div class="col-md-4">
+          <button class="c-button1" onclick="show_feed()">Feedback</button>
+          <form class="feedback" style="display: none;" method="post" action="/feedback">
+              <label for="feed"></label>
+              <textarea id="feed" class="feed_input" name="data" placeholder="Write feedback"></textarea>
+              <button class="feed_submit" type="submit">Submit</button>
+          </form>
+      </div>
+      <div class="col-md-4">
+          <h3 style="color: aliceblue;">Social Contact</h3>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=100053066719832"><i class="fa fa-facebook fa-fw"></i></a>
+              <a href="https://www.instagram.com/invites/contact/?i=jcoy1rsl41es&utm_content=3q9bsmw"><i class="fa fa-instagram fa-fw"></i></a>
+              <a href="https://www.linkedin.com/in/ankit-ahirwar-2006661b3"><i class="fa fa-linkedin fa-fw"></i></a>
+              <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <h3 style="color: aliceblue;">Contact Us</h3>
+          <p>Email: aahirwarankit2@gmail.com</p>
+          <p>Phone: +123-XX-XXX</p>
+          <p>Address: G109 Hall1,IIT Kanpur, India</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12 text-center">
+          <p>&copy; 2023 Creative Notebook All rights reserved.</p>
+      </div>
+  </div>
 </footer>
+
+
     
 </html>

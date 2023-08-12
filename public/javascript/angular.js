@@ -7,9 +7,9 @@ app.controller('myCtrl',function($scope,$http,$q){
    $scope.ushow=false;
   
    $scope.Expend=function(id){
-    $scope.CurrentNote=$scope.k[id];
+    $scope.CurrentNote=$scope.notes[id];
     
-    window.location.assign("/note/page/"+id)
+    window.location.assign("/note/"+id)
 } 
 
     $scope.show3=function(id){
@@ -18,27 +18,37 @@ app.controller('myCtrl',function($scope,$http,$q){
     $scope.show4=function(id){
         $scope.show_send[id]=!$scope.show_send[id];
     }
-    $scope.send=function(id){
-      
-        var sn ='/add_send?to_mail='+$scope.mail[id]+'&name='+$scope.k[id].name+'&data='+$scope.k[id].data;
-        
-
-        $http.get(sn).then(function(response){
+    $scope.send = async function(id, name, data){
+        $http({
+           method: 'POST',
+            url: '/sendNote/mail',
+            data: {
+                to_mail: $scope.mail[id], 
+                name: name,
+                data: data
+            }
+        }).then(function(response){
             $scope.show_send[id]=false;
         });
     }
 
 
     $scope.usubmit=function(id){
-        var u ='/update?index='+id+'&name='+$scope.uname+'&data='+$scope.udata;   
-        $http.get(u,{'cache': false}).then(function(response){
+        $http({
+            method: 'PUT',
+            url: '/note',
+            data: {
+                id: $scope.notes[id].noteId,
+                name: $scope.uname,
+                data: $scope.udata
+            }
+        },{'cache': false}).then(function(response){
             setTimeout(() => {window.location.reload();},100);
         });
     }
-     
      $scope.delete=function(id){
-         var del ='/delete?index='+id;
-         $http.get(del,{'cache': false}).then(function(response){
+         const del ='/note/'+id;
+         $http.delete(del,{'cache': false}).then(function(response){
              setTimeout(() => {window.location.reload();},100);
          });
      }
@@ -47,29 +57,29 @@ app.controller('myCtrl',function($scope,$http,$q){
     let id = params.get("id");
     
     
-    var s1='/addname?id='+id;
-    var s2='/add';
-    var s3='/find_send'
+    var s1='/profile'
+    var s2='/note';
     var requests = [];
     requests.push($http.get(s1, {'cache': false}));
     requests.push($http.get(s2, {'cache': false}));
-    requests.push($http.get(s3, {'cache': false}));
-    
+
     $q.all(requests).then(function(response){
-        $scope.firstname=response[0].data.fname;
-        $scope.lastname=response[0].data.lname;
-        $scope.k=response[1].data.note;
-        $scope.sends=response[2].data.send;
+        console.log(response[0])
+        $scope.firstname = response[0].data.profile.fname;
+        $scope.lastname = response[0].data.profile.lname;
+        $scope.notes= response[1].data.notes;
+       console.log(response[1].data.notes)
         
         $scope.update =function(id){
-            $scope.uname=$scope.k[id].name;
-            $scope.udata=$scope.k[id].data;
+            console.log(id)
+            $scope.uname=$scope.notes[id].name;
+            $scope.udata=$scope.notes[id].data;
             $scope.uid=id;
             if($scope.ushow==true){$scope.ushow=false}
             else{$scope.ushow=true}
             } 
        
-        var l=$scope.k.length;
+        var l=$scope.notes.length;
         var i;
         $scope.mail=[];
         $scope.showme=[];

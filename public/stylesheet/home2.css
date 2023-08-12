@@ -1,42 +1,231 @@
-.social{
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    right: 0px;
-    top:0px;
-    background-color: rgba(187, 187, 187, 0);
-    
+/* Font Awesome Icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
 }
-.fa-facebook {
-    background-color: #2469f3;
-    color: rgb(250, 250, 250);
+
+/* Body Styles */
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: aliceblue;
+}
+
+/* Top Section Styles */
+.top-f {
+  position: relative;
+  background-color: rgb(127, 45, 235);
+  margin: 0;
+  margin-top: 0;
+  width: 101.8%;
+}
+
+.note7 {
+  position: absolute;
+  right: 10%;
+  top: 7%;
+}
+
+.note1 {
+  position: relative;
+  left: 40%;
+  top: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top {
+  position: relative;
+  display: block;
+  top: -10px;
+  left: -10px;
+}
+
+#top-1 {
+  height: 30px;
+}
+
+#top-2 {
+  height: 0;
+  overflow: hidden;
+  animation: top_h1 2s 200ms forwards;
+}
+
+@keyframes top_h1 {
+  to {
+    height: 150px;
   }
-  .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+}
+
+#top-3 {
+  height: 0;
+  border-radius: 0 0 50% 50%;
+  animation: top_h2 4s 200ms forwards;
+  box-shadow: 0 1px 1px rgb(102, 102, 102), 0 4px 4px rgb(173, 172, 172);
+}
+
+@keyframes top_h2 {
+  to {
+    height: 200px;
   }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
-    opacity: 0.7;
-  }
-.fa-instagram {
-    background: linear-gradient(to bottom, #6e0bf0 0%, red 50%, #facf0f 100%);
-    color: white;
-    
-}  
-.fa-linkedin {
-    background-color: #2e98fc;
-    color: white;
-}  
-.fa-twitter {
-    background-color: #3ceaf0;
-    color: white;
-}  
-.mid{
-  background-color: rgba(243, 243, 243, 0.863);
+}
+
+.log_in {
+  position: absolute;
+  right: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: medium;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px rgb(110, 110, 110), 2px 1px 2px rgb(173, 172, 172);
+}
+
+.top-2-f {
+  position: relative;
+  font-size: 40px;
+  color: rgb(248, 248, 248);
+  left: 50px;
+  top: 30px;
+  text-shadow: 1px 1px 1px rgb(49, 48, 48), 3px 3px 3px rgb(173, 172, 172);
+}
+
+/* Middle Section Styles */
+.middle {
+  width: 100%;
+  position: relative;
+  height: 400px;
+}
+
+/* Contact Info Styles */
+.contact-info p {
+  margin-bottom: 8px;
+}
+
+/* Submenu 2 Styles */
+.sub_menu2 {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sub_menu2 li {
+  margin: 5px 0;
+}
+
+.sub_menu2 input[type="email"] {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.sub_menu2 button {
+  background-color: #689BFE;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sub_menu2 button:hover {
+  background-color: #5678c9; /* Change to your preferred hover color */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+footer h3 {
+  color: aliceblue;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  margin-right: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #00aced; /* Change to your preferred hover color */
+}
+
+/* Copyright Styles */
+footer p {
+  margin: 20px 0 0;
+  font-size: 14px;
+}
+
+/* Center text in columns */
+.col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Feedback Button Styles */
+.c-button1 {
+  background-color: #00aced;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.c-button1:hover {
+  background-color: #0072b1; /* Change to your preferred hover color */
+  transform: scale(1.05);
+}
+
+/* Feedback Form Styles */
+.feedback {
+  margin-top: 15px;
+}
+
+.feedback label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.feedback textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  color: #333;
+}
+
+.feed_submit {
+  display: block;
+  margin-top: 10px;
+  background-color: #00aced;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.feed_submit:hover {
+  background-color: #0072b1; /* Change to your preferred hover color */
 }
