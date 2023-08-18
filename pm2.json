@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "notebook",
+      "script": "./bin/index.js",
+      "exec_mode": "cluster",
+      "instances": 1,
+      "max_memory_restart": "256M",
+      "node_args": ["--max-old-space-size=1024"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      },
+      "kill_timeout": 5500
+    }
+  ]
+}
