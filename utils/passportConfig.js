@@ -1,7 +1,7 @@
 import 'dotenv/config';
 const GOOGLE_CLIENT_ID = process.env.GOOGLEID;                                                 //Write Google Client Id 
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLESECRET;  
-import {LOCAL, BACKEND_URL} from '../const/url.js'
+import {LOCAL_URL, BACKEND_URL} from '../const/url.js'
 
 import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
                                  //Write Google Client Secret Key 
@@ -13,7 +13,7 @@ async function generateCallback(){
         return BACKEND_URL+'user/log-in/google/callback'
     }
     else{
-        return LOCAL+'user/log-in/google/callback'
+        return LOCAL_URL+'user/log-in/google/callback'
     }
 }
 
