@@ -1,9 +1,22 @@
 import 'dotenv/config';
 const GOOGLE_CLIENT_ID = process.env.GOOGLEID;                                                 //Write Google Client Id 
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLESECRET;  
+import {LOCAL, BACKEND_URL} from '../const/url.js'
+
 import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
                                  //Write Google Client Secret Key 
 import userController from '../controller/user.js'
+
+async function generateCallback(){
+    const ENV = PROCESS.env.ENV
+    if(ENV === 'STAGE'){
+        return BACKEND_URL+'user/log-in/google/callback'
+    }
+    else{
+        return LOCAL+'user/log-in/google/callback'
+    }
+}
+
 
 if (!GOOGLE_CLIENT_ID) {
     throw new Error('Google Client ID not provided.');
@@ -14,6 +27,7 @@ if (!GOOGLE_CLIENT_SECRET) {
 }
 
 export default async(passport) => {
+    const callbackURL = await generateCallback()
     passport.serializeUser(function(user, cb) {
         cb(null, user);
       });
@@ -24,7 +38,7 @@ export default async(passport) => {
     passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:8080/user/log-in/google/callback",
+        callbackURL: callbackURL,
         passReqToCallback : true
         },
         userController.google_login

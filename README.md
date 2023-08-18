@@ -39,7 +39,7 @@ node start
 To Visit App:
 
 ```
-http://localhost:3450/
+http://www.creativenotebook.me
 
 ```
 #### Instructions
