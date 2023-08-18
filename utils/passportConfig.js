@@ -9,6 +9,7 @@ import userController from '../controller/user.js'
 
 async function generateCallback(){
     const ENV = process.env.ENV
+    console.log('ENV:'+ENV);
     if(ENV === 'STAGE'){
         return BACKEND_URL+'user/log-in/google/callback'
     }
@@ -38,7 +39,7 @@ export default async(passport) => {
     passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: callbackURL,
+        callbackURL: 'http://creativenotebook.me/user/log-in/google/callback',
         passReqToCallback : true
         },
         userController.google_login
