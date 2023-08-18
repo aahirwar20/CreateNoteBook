@@ -39,7 +39,7 @@ export default async(passport) => {
     passport.use(new GoogleStrategy({
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: 'http://creativenotebook.me/user/log-in/google/callback',
+        callbackURL: 'http://www.creativenotebook.me/user/log-in/google/callback',
         passReqToCallback : true
         },
         userController.google_login
