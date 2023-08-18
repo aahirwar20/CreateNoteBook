@@ -8,7 +8,7 @@ import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
 import userController from '../controller/user.js'
 
 async function generateCallback(){
-    const ENV = PROCESS.env.ENV
+    const ENV = process.env.ENV
     if(ENV === 'STAGE'){
         return BACKEND_URL+'user/log-in/google/callback'
     }
