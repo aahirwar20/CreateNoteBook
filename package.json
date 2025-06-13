@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "ENV=DEV &node ./bin/index.js",
-    "test": "ENV=DEV & cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
+    "test": "cross-env ENV=DEV NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testTimeout=10000 --detectOpenHandles",
     "dev": "ENV=DEV & nodemon ./bin/index.js",
     "build": "ENV=BUILD & npm install",
     "stage": "ENV=STAGE & pm2 start pm2.json"
