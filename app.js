@@ -33,21 +33,25 @@ app.engine('html', renderFile);
 app.set('view engine', 'ejs');
 app.use('/static',express.static('public'));
 app.use(cookieParser());
-app.use(session({
-    secret: "Your secret key",
-    resave: true,
-    saveUninitialized: true,
-    store:  new  MongoStore({
-        mongooseConnection: mongoose.connection,
-        collection: 'session',
-    })
-}));
+if (process.env.NODE_ENV !== 'test') {
+    app.use(session({
+        secret: "Your secret key",
+        resave: true,
+        saveUninitialized: true,
+        store:  new  MongoStore({
+            mongooseConnection: mongoose.connection,
+            collection: 'session',
+        })
+    }));
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 
 (async () => {
-    await connectMongoDb(process.env.MONGODBKEY);
+    if (process.env.NODE_ENV !== 'test') {
+        await connectMongoDb(process.env.MONGODBKEY);
+    }
 })();
 
 // Health check route
