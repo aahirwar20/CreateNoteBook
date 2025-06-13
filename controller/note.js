@@ -89,7 +89,7 @@ async function sendNoteToMail(req, res, next){
          from:"ankitahirwarvinod2@gmail.com",
          to: to_mail,
          subject:"creative notebook",
-         text:"It is from creative notebook " + name + ' ' + data,
+         text: `It is from creative notebook ${name} ${data}`,
         }
         mailTranspoter.sendMail(mailDetails,function(err,data){
          if(err){throw err;}
