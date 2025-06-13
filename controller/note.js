@@ -46,7 +46,8 @@ async function getAllNotes(req, res, next){
 
 async function getById(req, res, next){
     try{
-       const id  = req.param.id
+       // use req.params to read route parameters
+       const id  = req.params.id
        const note = await Note.findById(id)
        res.render('Notepage.ejs',{ note: note }) 
     }catch(error){
@@ -72,7 +73,8 @@ async function updateNote(req, res, next){
 
 async function deleteNote(req, res, next){
     try{
-       const id  = req.param.id
+       // use req.params to read route parameters
+       const id  = req.params.id
        await Note.findByIdAndRemove(id)
        res.redirect('/dashboard')
     }catch(error){
@@ -82,12 +84,12 @@ async function deleteNote(req, res, next){
 
 async function sendNoteToMail(req, res, next){
     try{
-        const { to_mail } = req.body
+        const { to_mail, name, data } = req.body
         const mailDetails={
          from:"ankitahirwarvinod2@gmail.com",
          to: to_mail,
          subject:"creative notebook",
-         text:"It is from creative notebook"+qu.name+' '+qu.data+' ',
+         text: `It is from creative notebook ${name} ${data}`,
         }
         mailTranspoter.sendMail(mailDetails,function(err,data){
          if(err){throw err;}
